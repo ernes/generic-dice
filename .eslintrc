@@ -1,0 +1,20 @@
+// Configuration: http://eslint.org/docs/user-guide/configuring
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jquery": false,
+    "commonjs": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "extends": [
+    "airbnb"
+  ]
+}

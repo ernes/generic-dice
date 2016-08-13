@@ -1,0 +1,7 @@
+package.json
+jsconfig.json
+.eslintrc
+.babelrc
+node_modules
+server.js
+*.scss
