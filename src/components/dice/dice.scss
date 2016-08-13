@@ -1,4 +1,33 @@
-.main-wrapper {
-    display: flex;
-    align-items: center;
+@import './animate-dice';
+@import './dice-wrapper';
+
+.dice {
+  position: relative;
+  min-width: 5em;
+  height: 5em;
+  margin: 1.5em;
+  background-color: #b1a592;
+  border: 1px solid #9b8b59;
+  border-radius: 7%;
+  display: flex;
+  transform: rotate(30deg);
+  animation-duration: 0.7s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  z-index: 1;
+
+  // Rolling animation.
+  &.throw1 {
+    animation-name: throw-1;
+  }
+  &.throw2 {
+    animation-name: throw-2;
+  }
+  &.throw3 {
+    animation-name: throw-3;
+  }
+  &.throw4 {
+    animation-name: throw-4;
+  }
 }

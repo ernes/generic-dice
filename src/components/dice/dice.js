@@ -1,36 +1,35 @@
 import React, { Component } from 'react';
 
+import DiceFace from '../dice-face/dice-face';
+import DiceShadow from '../dice-shadow/dice-shadow';
 import './dice.scss';
 
 export default class Dice extends Component {
   render() {
     return (
-      <div className="main-wrapper">
+      <div
+        className="dice-wrapper"
+        style={
+          { fontSize: `${this.props.size}px` }
+        }
+      >
         <div className="dice">
-          <div className="dice-face">
-            <div className="dice-dot"></div>
-            <div className="dice-dot"></div>
-            <div className="dice-dot"></div>
-            <div className="dice-dot"></div>
-            <div className="dice-dot"></div>
-            <div className="dice-dot"></div>
-          </div>
+          <DiceFace face={this.props.face} />
         </div>
-        <p>
-          I am a dice with face {this.props.face}.
-          Flying: {this.props.flying.toString()}.
-        </p>
+        <DiceShadow />
       </div>
     );
   }
 }
 
 Dice.propTypes = {
-  face: React.PropTypes.number.isRequired,
-  flying: React.PropTypes.bool.isRequired,
+  face: React.PropTypes.number,
+  rolling: React.PropTypes.bool,
+  size: React.PropTypes.number,
 };
 
 Dice.defaultProps = {
   face: 1,
-  flying: true,
+  rolling: true,
+  size: 16,
 };
