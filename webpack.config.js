@@ -31,6 +31,13 @@ module.exports = {
         test: /\.css$/,
         loader: 'style!css?',
       },
+      {
+        test: /\.png$/,
+        loader: 'url-loader',
+        query: {
+          mimetype: 'image/png',
+        },
+      },
     ],
   },
   plugins: [
@@ -39,9 +46,11 @@ module.exports = {
       { from: 'favicon.ico' },
       { from: 'robots.txt' },
       { from: 'img/**/*' },
-    ], {
-      copyUnmodified: false,
-    }),
+    ],
+      {
+        copyUnmodified: false,
+      }
+    ),
   ],
 
 };

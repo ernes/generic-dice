@@ -48,6 +48,7 @@
     "copy-webpack-plugin": "3.0.1",
     "css-loader": "0.23.1",
     "express": "4.13.3",
+    "file-loader": "0.9.0",
     "helmet": "2.1.1",
     "left-pad": "azer/left-pad",
     "node-sass": "3.8.0",
@@ -58,6 +59,7 @@
     "sass-loader": "3.2.0",
     "sorted-object": "2.0.0",
     "style-loader": "0.13.0",
+    "url-loader": "0.5.7",
     "webpack": "1.12.14"
   }
 }
