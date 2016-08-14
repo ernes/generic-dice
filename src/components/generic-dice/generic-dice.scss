@@ -18,16 +18,7 @@
   z-index: 1;
 
   // Rolling animation.
-  &.throw1 {
-    animation-name: throw-1;
-  }
-  &.throw2 {
-    animation-name: throw-2;
-  }
-  &.throw3 {
-    animation-name: throw-3;
-  }
-  &.throw4 {
-    animation-name: throw-4;
+  &.thrown {
+    animation-name: thrown;
   }
 }
