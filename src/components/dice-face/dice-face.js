@@ -5,13 +5,19 @@ import './dice-dot.scss';
 
 export default class DiceFace extends Component {
   render() {
+    const face = this.props.face;
+    const faces = [];
+    for (let index = 1; index <= face; index++) {
+      const key = `dot-${index}-${face}`;
+      const faceClass = `dice-dot ${key} dots-${face}`;
+      faces.push(
+        <div className={faceClass} key={key} />
+      );
+    }
+
     return (
       <div className="dice-face">
-        <div className="dice-dot dot-1-5 dots-5"></div>
-        <div className="dice-dot dot-2-5 dots-5"></div>
-        <div className="dice-dot dot-3-5 dots-5"></div>
-        <div className="dice-dot dot-4-5 dots-5"></div>
-        <div className="dice-dot dot-5-5 dots-5"></div>
+        {faces}
       </div>
     );
   }

@@ -17,6 +17,7 @@
   animation-fill-mode: forwards;
   z-index: 0;
 
+  // "Throw in the air" animation.
   &.throw4 {
     animation-name: throw-4-shadow;
   }
