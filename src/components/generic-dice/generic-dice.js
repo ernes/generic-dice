@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 import DiceFace from '../dice-face/dice-face';
 import DiceShadow from '../dice-shadow/dice-shadow';
-import './dice.scss';
+import './generic-dice.scss';
 
-export default class Dice extends Component {
+export default class GenericDice extends Component {
   render() {
     return (
       <div
@@ -22,13 +22,13 @@ export default class Dice extends Component {
   }
 }
 
-Dice.propTypes = {
+GenericDice.propTypes = {
   face: React.PropTypes.number,
   rolling: React.PropTypes.bool,
   size: React.PropTypes.number,
 };
 
-Dice.defaultProps = {
+GenericDice.defaultProps = {
   face: 1,
   rolling: true,
   size: 16,

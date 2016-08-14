@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import Dice from './components/dice/dice';
+import Dice from './components/generic-dice/generic-dice';
 import './index.scss';
 
 render((
