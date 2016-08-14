@@ -6,6 +6,7 @@ import './index.scss';
 
 render((
   <div>
+    <Dice />
     <Dice face={5} />
     <Dice face={6} rolling={false} size={5} />
     <Dice face={4} rolling={false} size={10} />
@@ -18,43 +19,6 @@ render((
 
 function main() {
   const app = {};
-
-  app.dicesAmount = 0;
-
-  app.dicesResults = [];
-  app.finalResult = 0;
-  app.resultsPool = [];
-
-  app.flying = false;
-
-  app.createDiceIn = function (container) {
-      var html = '';
-
-      this.dicesAmount++;
-
-      html += '<div id="dice-'+this.dicesAmount+'" class="dice">';
-
-      for( var i = 1, l = 7 ; i < l ; i++ ) { 
-
-          html += '<div id="dice-'+this.dicesAmount+'-face-'+i+'" class="dice-face">';
-
-              for( var j = 0; j < i; j++ ){
-
-                  html += '<div class="dice-dot dot-'+(j+1)+'-'+i+' dots-'+i+'" ></div>';
-
-              }
-
-          html += '</div>';
-
-      }
-
-      html += '</div>';
-
-      var container_ = document.getElementById(container);
-      var container_shadows = document.getElementById(container+'-shadows');
-      container_.innerHTML = container_.innerHTML + html;
-      container_shadows.innerHTML = container_shadows.innerHTML + '<div id="dice-'+this.dicesAmount+'-shadow" class="dice-shadow"></div>';
-  };
 
   app.diceShake = function(elIndex, duration, result, callback) {
     var face = this.randomFace();

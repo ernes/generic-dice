@@ -6,8 +6,8 @@
   width: 5em;
   height: 5em;
   margin: 1.5em;
-  left: 0.4em;
-  top: 1.2em;
+  left: .2em;
+  top: .4em;
   transform: rotate(30deg) scale(0.9);
   background-color: rgba(0, 0, 0, .2);
   box-shadow: 0 0 1em 0.2em rgba(0, 0, 0, .3);
@@ -16,6 +16,7 @@
   animation-delay: 0s;
   animation-fill-mode: forwards;
   z-index: 0;
+  border: none;
 
   // "Throw in the air" animation.
   &.throw4 {
