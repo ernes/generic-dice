@@ -9,9 +9,8 @@
   "scripts": {
     "lint": "eslint .",
     "buid": "node ./node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js --progress --colors",
-    "start": "node server.js",
-    "dev": "node ./node_modules/webpack/bin/webpack.js -w",
-    "demo": "node ./node_modules/webpack/bin/webpack.js --config ./demo/webpack.config.js --progress --colors"
+    "demo": "node ./node_modules/webpack/bin/webpack.js --config ./demo/webpack.config.js --progress --colors",
+    "dev": "node ./node_modules/webpack/bin/webpack.js -w"
   },
   "repository": {
     "type": "git",
