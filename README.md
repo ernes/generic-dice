@@ -29,7 +29,7 @@ import Dice from 'generic-dice';
 
 render((
   <Dice />
-), document.getElementById('root'));
+), document.getElementById('game'));
 ```
 
 ### Dice with a value set in face property
@@ -42,7 +42,7 @@ import Dice from 'generic-dice';
 
 render((
   <Dice face={6} />
-), document.getElementById('root'));
+), document.getElementById('game'));
 ```
 
 ### Dice with a value, not rolling when first displayed and with a custom size of 10 pixels
@@ -55,7 +55,7 @@ import Dice from 'generic-dice';
 
 render((
   <Dice face={5} rolling={false} size={10} />
-), document.getElementById('root'));
+), document.getElementById('game'));
 ```
 
 ### Mixing several dices
@@ -72,7 +72,7 @@ render((
     <Dice face={6} />
     <Dice face={5} rolling={false} size={10} />
   </div>
-), document.getElementById('root'));
+), document.getElementById('game'));
 ```
 
 ## Credits

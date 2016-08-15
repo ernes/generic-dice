@@ -4,13 +4,14 @@
   "engines": {
     "node": "6.2.2"
   },
-  "description": "Generic dice to add to your games",
+  "description": "A generic dice UI component rendered with React.js",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
     "buid": "node ./node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js --progress --colors",
     "start": "node server.js",
-    "dev": "node ./node_modules/webpack/bin/webpack.js -w"
+    "dev": "node ./node_modules/webpack/bin/webpack.js -w",
+    "demo": "node ./node_modules/webpack/bin/webpack.js --config ./demo/webpack.config.js --progress --colors"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,8 @@
   "keywords": [
     "game",
     "dice",
-    "gambling"
+    "gambling",
+    "react.js"
   ],
   "author": "Ernesto Paniagua <ernestopani@gmail.com> (http://gyroscopic.info)",
   "contributors": [
@@ -32,7 +34,8 @@
   "license": "GPL-3.0",
   "private": false,
   "dependencies": {
-    "react": "0.14.7"
+    "react": "0.14.7",
+    "react-dom": "0.14.7"
   },
   "devDependencies": {
     "babel-core": "6.7.4",
@@ -50,6 +53,7 @@
     "node-sass": "3.8.0",
     "promise-polyfill": "4.0.3",
     "sass-loader": "3.2.0",
+    "css-loader": "0.23.1",
     "sorted-object": "2.0.0",
     "style-loader": "0.13.0",
     "file-loader": "0.9.0",
