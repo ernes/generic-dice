@@ -1,3 +1,3 @@
-import Dice from './src/components/generic-dice/generic-dice';
+import GenericDice from './components/generic-dice/generic-dice';
 
-export default Dice;
+export default GenericDice;
