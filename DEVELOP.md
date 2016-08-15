@@ -1,5 +1,9 @@
 # Develop source code of Generic-Dice
 
+The instructions below are meant for contributors who want to develop this component further.
+
+For simple installation and usage instruction, see the main README.md of this repository.
+
 ## Install this npm module from local source code instead of npmjs repos
 
 If you checked out the source code to a directory in ../generic-dice/, then you would run from the directory where you want to install this npm module:
@@ -42,9 +46,7 @@ npm run lint
 
 ### Run the project locally
 
-```
-npm start
-```
+See the demo to view sample usage of this React.js component.
 
 ### Initial setup to publish on npm
 
