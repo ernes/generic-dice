@@ -1,3 +1,3 @@
-require('babel-polyfill');
-require('babel-core/register');
-require('./server');
+import Dice from './src/components/generic-dice/generic-dice';
+
+export default Dice;

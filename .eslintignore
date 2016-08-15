@@ -4,4 +4,5 @@ jsconfig.json
 .babelrc
 node_modules
 server.js
+npm-debug.log
 *.scss

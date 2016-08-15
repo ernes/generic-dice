@@ -1,6 +1,6 @@
 # Develop source code of Generic-Dice
 
-## Install
+## Install dependencies to develop source code
 
 Tools required on your machine, if you haven't already installed them:
 
@@ -8,10 +8,16 @@ Tools required on your machine, if you haven't already installed them:
 npm install -g webpack eslint eslint-config-airbnb eslint-plugin-react babel-eslint
 ```
 
-## Install project depedencies and build
+## Install project dependencies
 
 ```
 npm install
+```
+
+### Build dependencies once
+
+```
+npm run build
 ```
 
 ### Build continuously while developing
@@ -20,10 +26,28 @@ npm install
 npm run dev
 ```
 
-### Run the project
+### Lint the project once
+
+```
+npm run lint
+```
+
+### Run the project locally
 
 ```
 npm start
+```
+
+### Initial setup to publish on npm
+
+```
+npm login
+```
+
+### Publish to npm
+
+```
+npm publish
 ```
 
 ## Visual Studio Code setup [optional]
@@ -43,19 +67,3 @@ You will also need to install the following plugins:
 ```
 ext install eslint
 ```
-
-## Releases
-A tag is created from the master branch for each release.
-
-### Current version being developped
-
-- 1.1.0 Implement React.js
-
-### Release history
-
-- 1.0.0 First working version of the dices.
-
-## Credits
-
-- Ernesto Paniagua: Developer
-- Nadjib Amar: Developer

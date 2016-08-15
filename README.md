@@ -9,3 +9,7 @@ The main part component of this module is `<GenericDice>` but it's possible to u
 npm install generic-dice --save
 ```
 
+## Credits
+
+- Ernesto Paniagua: Developer and Designer
+- Nadjib Amar: Developer

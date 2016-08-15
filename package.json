@@ -1,14 +1,15 @@
 {
   "name": "generic-dice",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "engines": {
     "node": "6.2.2"
   },
   "description": "Generic dice to add to your games",
   "main": "index.js",
   "scripts": {
-    "postinstall": "node ./node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js --progress --colors",
-    "start": "node index.js",
+    "lint": "eslint .",
+    "start": "node server.js",
+    "build": "node ./node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js --progress --colors",
     "dev": "node ./node_modules/webpack/bin/webpack.js -w"
   },
   "repository": {
@@ -30,12 +31,14 @@
   ],
   "license": "GPL-3.0",
   "private": false,
+  "dependencies": {
+    "react": "0.14.7",
+    "react-dom": "0.14.7",
+  },
   "devDependencies": {
     "eslint": "2.6.0",
     "eslint-config-airbnb": "6.2.0",
-    "eslint-plugin-react": "4.2.3"
-  },
-  "dependencies": {
+    "eslint-plugin-react": "4.2.3",
     "babel-core": "6.7.4",
     "babel-eslint": "6.0.2",
     "babel-loader": "6.2.4",
@@ -53,8 +56,6 @@
     "left-pad": "azer/left-pad",
     "node-sass": "3.8.0",
     "promise-polyfill": "4.0.3",
-    "react": "0.14.7",
-    "react-dom": "0.14.7",
     "react-router": "2.0.1",
     "sass-loader": "3.2.0",
     "sorted-object": "2.0.0",
