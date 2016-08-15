@@ -57,9 +57,7 @@ export default class GenericDice extends Component {
     return (
       <div
         className="dice-wrapper"
-        style={
-          { fontSize: `${this.props.size}px` }
-        }
+        style={{ fontSize: `${this.props.size}px` }}
       >
         <div
           className={diceClass}

@@ -7,8 +7,8 @@
   "description": "Generic dice to add to your games",
   "main": "index.js",
   "scripts": {
-    "postinstall": "node ./node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js --progress --colors",
     "lint": "eslint .",
+    "buid": "node ./node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js --progress --colors",
     "start": "node server.js",
     "dev": "node ./node_modules/webpack/bin/webpack.js -w"
   },
@@ -35,9 +35,6 @@
     "react": "0.14.7"
   },
   "devDependencies": {
-    "eslint": "2.6.0",
-    "eslint-config-airbnb": "6.2.0",
-    "eslint-plugin-react": "4.2.3",
     "babel-core": "6.7.4",
     "babel-eslint": "6.0.2",
     "babel-loader": "6.2.4",
@@ -46,12 +43,16 @@
     "babel-preset-react": "6.5.0",
     "babel-register": "6.7.2",
     "classnames": "2.2.3",
+    "eslint": "2.6.0",
+    "eslint-config-airbnb": "6.2.0",
+    "eslint-plugin-react": "4.2.3",
     "left-pad": "azer/left-pad",
     "node-sass": "3.8.0",
     "promise-polyfill": "4.0.3",
     "sass-loader": "3.2.0",
     "sorted-object": "2.0.0",
     "style-loader": "0.13.0",
+    "file-loader": "0.9.0",
     "url-loader": "0.5.7",
     "webpack": "1.12.14"
   }
