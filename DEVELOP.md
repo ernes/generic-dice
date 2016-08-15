@@ -1,5 +1,13 @@
 # Develop source code of Generic-Dice
 
+## Install this npm module from local source code instead of npmjs repos
+
+If you checked out the source code to a directory in ../generic-dice/, then you would run from the directory where you want to install this npm module:
+
+```
+npm install ../generic-dice/
+```
+
 ## Install dependencies to develop source code
 
 Tools required on your machine, if you haven't already installed them:
