@@ -7,9 +7,9 @@
   "description": "Generic dice to add to your games",
   "main": "index.js",
   "scripts": {
+    "postinstall": "node ./node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js --progress --colors",
     "lint": "eslint .",
     "start": "node server.js",
-    "build": "node ./node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js --progress --colors",
     "dev": "node ./node_modules/webpack/bin/webpack.js -w"
   },
   "repository": {
@@ -21,12 +21,12 @@
     "dice",
     "gambling"
   ],
-  "author": "Ernesto Paniagua <ernestopani@gmail.com>",
+  "author": "Ernesto Paniagua <ernestopani@gmail.com> (http://gyroscopic.info)",
   "contributors": [
     {
       "name": "Nadjib Amar",
       "email": "hello@ebabel.eu",
-      "url": "http://ebabel.eu/"
+      "url": "http://ebabel.eu"
     }
   ],
   "license": "GPL-3.0",
@@ -48,7 +48,6 @@
     "babel-register": "6.7.2",
     "classnames": "2.2.3",
     "compression": "1.6.2",
-    "copy-webpack-plugin": "3.0.1",
     "css-loader": "0.23.1",
     "express": "4.13.3",
     "file-loader": "0.9.0",

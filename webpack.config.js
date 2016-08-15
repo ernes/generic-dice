@@ -1,17 +1,17 @@
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
-  context: `${__dirname}/src`,
+  context: `${__dirname}`,
   entry: {
     bundle: './index',
   },
   devtool: 'source-map',
   output: {
-    path: `${__dirname}/build`,
-    filename: '[name].js',
+    path: `${__dirname}/dist`,
+    filename: 'generic-dice.js',
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', '.scss', '.css'],
+    extensions: ['', '.js', '.jsx', '.scss'],
   },
   module: {
     loaders: [
@@ -28,10 +28,6 @@ module.exports = {
         loader: 'style!css!sass',
       },
       {
-        test: /\.css$/,
-        loader: 'style!css?',
-      },
-      {
         test: /\.png$/,
         loader: 'url-loader',
         query: {
@@ -41,16 +37,10 @@ module.exports = {
     ],
   },
   plugins: [
-    new CopyWebpackPlugin([
-      { from: 'index.html' },
-      { from: 'favicon.ico' },
-      { from: 'robots.txt' },
-      { from: 'img/**/*' },
-    ],
-      {
-        copyUnmodified: false,
-      }
-    ),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+      },
+    }),
   ],
-
 };
