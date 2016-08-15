@@ -16,5 +16,9 @@
   },
   "extends": [
     "airbnb"
-  ]
+  ],
+  // Override default options for rules from base configurations.
+  "rules": {
+    "react/prefer-stateless-function": "warn"
+  }
 }

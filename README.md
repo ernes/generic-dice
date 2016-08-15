@@ -1,4 +1,6 @@
 # Generic-Dice
+[![wercker status](https://app.wercker.com/status/bad03c20d556f581adbae06b83f1528f/m/master "wercker status")](https://app.wercker.com/project/byKey/bad03c20d556f581adbae06b83f1528f)
+
 Generic dice to add to any game using React.js
 
 Note: this dice is purely a display component, it will not try to pick a random value.
