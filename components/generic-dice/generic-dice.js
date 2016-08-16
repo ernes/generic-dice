@@ -65,7 +65,7 @@ export default class GenericDice extends Component {
         >
           <DiceFace face={this.state.face} />
         </div>
-        <DiceShadow />
+        <DiceShadow animation={this.state.animation} />
       </div>
     );
   }
