@@ -26,6 +26,8 @@ npm install -g webpack eslint eslint-config-airbnb eslint-plugin-react babel-esl
 npm install
 ```
 
+Note: to check how up to date the dependencies are, run `npm-check` if it's already installed globally via `npm install npm-check -g`.
+
 ### Build dependencies once
 
 ```

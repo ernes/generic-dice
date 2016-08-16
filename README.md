@@ -1,5 +1,4 @@
-# Generic-Dice
-[![wercker status](https://app.wercker.com/status/bad03c20d556f581adbae06b83f1528f/m/master "wercker status")](https://app.wercker.com/project/byKey/bad03c20d556f581adbae06b83f1528f)
+# Generic-Dice [![wercker status](https://app.wercker.com/status/bad03c20d556f581adbae06b83f1528f/s/master "wercker status")](https://app.wercker.com/project/byKey/bad03c20d556f581adbae06b83f1528f) [![generic-dice](http://img.shields.io/npm/dm/generic-dice.svg)](https://www.npmjs.org/package/generic-dice)
 
 Generic dice to add to any game using React.js
 
@@ -81,3 +80,5 @@ render((
 
 - Ernesto Paniagua: Developer and Designer
 - Nadjib Amar: Developer
+
+[Change log](CHANGELOG.md)
