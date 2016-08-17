@@ -19,7 +19,7 @@ export default class GenericDice extends Component {
     }
   }
 
-  // @animation: string CSS class parameter that can be 'throw1', 'throw2', 'throw3' or 'throw4'.
+  // @animation: string CSS class parameter that can be 'thrown' or ''.
   // @duration: length of time in milliseconds during which the animation should last.
   roll(animation = 'thrown', duration = 2000) {
     let start;
