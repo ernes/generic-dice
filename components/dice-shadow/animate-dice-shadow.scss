@@ -1,0 +1,17 @@
+@keyframes thrown-shadow {
+  0% {
+    transform: rotate(30deg) scale(0.9);
+    left: .4em;
+    top: .6em;
+  }
+  60% {
+    transform: rotate(250deg) scale(0.8);
+    left: 1.6em;
+    top: 2.4em;
+  }
+  100% {
+    transform: rotate(390deg) scale(0.9);
+    left: .4em;
+    top: .6em;
+  }
+}

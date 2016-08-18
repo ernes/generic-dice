@@ -1,0 +1,11 @@
+@keyframes thrown {
+  0% {
+    transform: rotate(30deg) scale(1);
+  }
+  60% {
+    transform: rotate(250deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(390deg) scale(1);
+  }
+}
