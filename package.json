@@ -12,7 +12,7 @@
     "build": "node ./node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js --progress --colors",
     "demo": "node ./node_modules/webpack/bin/webpack.js --config ./demo/webpack.config.js --progress --colors",
     "dev": "node ./node_modules/webpack/bin/webpack.js -w",
-    "test": "node ./node_modules/jest/bin/jest.js"
+    "test": "node ./node_modules/jest-cli/bin/jest.js"
   },
   "jest": {
     "automock": false
