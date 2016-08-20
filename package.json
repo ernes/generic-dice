@@ -19,8 +19,11 @@
     "testPathDirs": [
       "components/"
     ],
+    "scriptPreprocessor": "./scripts/jest/preprocessor.js",
     "automock": true,
-    "scriptPreprocessor": "./scripts/jest/preprocessor.js"
+    "unmockedModulePathPatterns": [
+      "react"
+    ]
   },
   "repository": {
     "type": "git",
