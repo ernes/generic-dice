@@ -7,6 +7,7 @@
   "description": "A generic dice UI component rendered with React.js",
   "main": "index.js",
   "scripts": {
+    "postinstall": "npm run build && npm run demo",
     "lint": "node ./node_modules/.bin/eslint .",
     "build": "node ./node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js --progress --colors",
     "demo": "node ./node_modules/webpack/bin/webpack.js --config ./demo/webpack.config.js --progress --colors",
@@ -37,8 +38,8 @@
   "license": "GPL-3.0",
   "private": false,
   "dependencies": {
-    "react": "0.14.7",
-    "react-dom": "0.14.7"
+    "react": "15.3.1",
+    "react-dom": "15.3.1"
   },
   "devDependencies": {
     "babel-core": "6.7.4",
@@ -56,6 +57,7 @@
     "eslint-plugin-react": "4.2.3",
     "file-loader": "0.9.0",
     "jest": "14.1.0",
+    "jest-cli": "14.1.0",
     "left-pad": "azer/left-pad",
     "node-sass": "3.8.0",
     "promise-polyfill": "4.0.3",
