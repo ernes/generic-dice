@@ -42,5 +42,13 @@ module.exports = {
         warnings: false,
       },
     }),
+
+    // Development: set NODE_ENV to '"development"'
+    // Production: set NODE_ENV to '"production"'
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"',
+      },
+    }),
   ],
 };

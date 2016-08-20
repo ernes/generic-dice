@@ -42,5 +42,13 @@ module.exports = {
         warnings: false,
       },
     }),
+
+    // For Production, make sure to include this plugin definition
+    // to prevent the bundle from including development-only warning for React.
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"',
+      },
+    }),
   ],
 };
