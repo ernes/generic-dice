@@ -16,26 +16,10 @@
     "test": "jest"
   },
   "jest": {
-    "modulePathIgnorePatterns": [
-      "/assets/",
-      "/demo/",
-      "/dist/",
-      "/node_modules/"
-    ],
-    "persistModuleRegistryBetweenSpecs": true,
-    "rootDir": "",
-    "scriptPreprocessor": "scripts/jest/preprocessor.js",
-    "setupEnvScriptFile": "scripts/jest/environment.js",
-    "setupTestFrameworkScriptFile": "scripts/jest/test-framework-setup.js",
-    "testFileExtensions": [
-      "js"
-    ],
     "testPathDirs": [
-      "<rootDir>/components"
+      "components/"
     ],
-    "unmockedModulePathPatterns": [
-      ""
-    ]
+    "automock": false
   },
   "repository": {
     "type": "git",
@@ -62,7 +46,7 @@
     "react-dom": "15.3.1"
   },
   "devDependencies": {
-    "babel-core": "6.7.4",
+    "babel-core": "6.10.4",
     "babel-eslint": "6.0.2",
     "babel-jest": "14.1.0",
     "babel-loader": "6.2.4",
