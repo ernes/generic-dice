@@ -22,6 +22,8 @@ npm install -g webpack eslint eslint-config-airbnb eslint-plugin-react babel-esl
 
 ## Install project dependencies
 
+The main generic dice component and the demo will be built automatically after the dependencies are installed.
+
 ```
 npm install
 ```
@@ -44,6 +46,12 @@ npm run dev
 
 ```
 npm run lint
+```
+
+### Unit test the component
+
+```
+npm test
 ```
 
 ### Run the project locally

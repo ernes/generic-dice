@@ -1,8 +1,9 @@
 {
   "name": "generic-dice",
   "version": "1.1.3",
-  "engines": {
-    "node": "6.2.2"
+  "devEngines": {
+    "node": "4.x || 5.x || 6.x",
+    "npm": "2.x || 3.x"
   },
   "description": "A generic dice UI component rendered with React.js",
   "main": "index.js",
@@ -12,10 +13,29 @@
     "build": "node ./node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js --progress --colors",
     "demo": "node ./node_modules/webpack/bin/webpack.js --config ./demo/webpack.config.js --progress --colors",
     "dev": "node ./node_modules/webpack/bin/webpack.js -w",
-    "test": "node ./node_modules/jest-cli/bin/jest.js"
+    "test": "jest"
   },
   "jest": {
-    "automock": false
+    "modulePathIgnorePatterns": [
+      "/assets/",
+      "/demo/",
+      "/dist/",
+      "/node_modules/"
+    ],
+    "persistModuleRegistryBetweenSpecs": true,
+    "rootDir": "",
+    "scriptPreprocessor": "scripts/jest/preprocessor.js",
+    "setupEnvScriptFile": "scripts/jest/environment.js",
+    "setupTestFrameworkScriptFile": "scripts/jest/test-framework-setup.js",
+    "testFileExtensions": [
+      "js"
+    ],
+    "testPathDirs": [
+      "<rootDir>/components"
+    ],
+    "unmockedModulePathPatterns": [
+      ""
+    ]
   },
   "repository": {
     "type": "git",
