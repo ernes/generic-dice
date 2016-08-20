@@ -7,4 +7,3 @@ server.js
 npm-debug.log
 *.scss
 dist
-__tests__
