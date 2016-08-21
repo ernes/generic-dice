@@ -13,7 +13,7 @@
     "build": "node ./node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js --progress --colors",
     "demo": "node ./node_modules/webpack/bin/webpack.js --config ./demo/webpack.config.js --progress --colors",
     "dev": "node ./node_modules/webpack/bin/webpack.js -w",
-    "test": "jest -u"
+    "test": "jest ./components/ -u"
   },
   "jest": {
     "testPathDirs": [
