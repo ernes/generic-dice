@@ -42,3 +42,4 @@ jspm_packages
 # Project
 build/
 dist/
+__snapshots__/

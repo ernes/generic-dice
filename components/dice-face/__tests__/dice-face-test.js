@@ -2,8 +2,8 @@
 
 import DiceFace from '../dice-face';
 
-describe('dice-face', () => {
-  it('exists', () => {
+describe('DiceFace', () => {
+  it('exists.', () => {
     expect(DiceFace).toBeDefined();
   });
 });
