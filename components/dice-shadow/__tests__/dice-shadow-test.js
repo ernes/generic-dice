@@ -3,7 +3,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import DiceShadow from '../dice-shadow';
+const DiceShadow = require('../dice-shadow').default;
 
 describe('DiceShadow', () => {
   it('exists.', () => {
