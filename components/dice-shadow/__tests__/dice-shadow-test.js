@@ -1,18 +1,18 @@
-/* global describe it expect */
+/* global describe jest it expect */
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+
+import DiceShadow from '../dice-shadow';
 
 jest.unmock('../dice-shadow');
 
 describe('DiceShadow', () => {
   it('exists.', () => {
-    const DiceShadow = require('../dice-shadow').default;
     expect(DiceShadow).toBeDefined();
   });
 
   it('renders an element that is not animated.', () => {
-    const DiceShadow = require('../dice-shadow').default;
     const component = renderer.create(
       <DiceShadow animation="" />
     );
@@ -22,7 +22,6 @@ describe('DiceShadow', () => {
   });
 
   it('renders an element that *is* animated.', () => {
-    const DiceShadow = require('../dice-shadow').default;
     const component = renderer.create(
       <DiceShadow animation="thrown" />
     );
