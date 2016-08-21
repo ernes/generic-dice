@@ -1,5 +1,7 @@
 const webpack = require('webpack');
 
+
+
 module.exports = {
   context: `${__dirname}`,
   entry: {
@@ -8,7 +10,7 @@ module.exports = {
   devtool: 'source-map',
   output: {
     path: `${__dirname}/dist`,
-    filename: 'game.js',
+    filename: 'game.min.js',
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.scss'],

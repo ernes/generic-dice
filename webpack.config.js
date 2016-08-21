@@ -8,7 +8,7 @@ module.exports = {
   devtool: 'source-map',
   output: {
     path: `${__dirname}/dist`,
-    filename: 'generic-dice.js',
+    filename: 'generic-dice.min.js',
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.scss'],
