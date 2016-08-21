@@ -16,6 +16,8 @@ describe('DiceShadow', () => {
     );
     const tree = component.toJSON();
 
+    console.log(`The tree is ${tree}`);
+
     expect(tree).toMatchSnapshot();
   });
 });
