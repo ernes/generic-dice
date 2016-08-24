@@ -17,7 +17,7 @@ npm install ../generic-dice/
 Tools required on your machine, if you haven't already installed them:
 
 ```
-npm install -g webpack eslint eslint-config-airbnb eslint-plugin-react babel-eslint
+npm install -g webpack@1.12.14 eslint eslint-config-airbnb eslint-plugin-react babel-eslint
 ```
 
 ## Install project dependencies
