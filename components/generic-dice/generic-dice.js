@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CSSTransitionGroup } from 'react-addons-css-transition-group';
 
 import DiceFace from '../dice-face/dice-face';
 import DiceShadow from '../dice-shadow/dice-shadow';
@@ -55,7 +56,8 @@ export default class GenericDice extends Component {
     const diceClass = `dice ${this.state.animation || ''}`;
 
     return (
-      <div
+      <CSSTransitionGroup
+        component="div"
         className="dice-wrapper"
         style={{ fontSize: `${this.props.size}px` }}
       >
@@ -66,7 +68,7 @@ export default class GenericDice extends Component {
           <DiceFace face={this.state.face} />
         </div>
         <DiceShadow animation={this.state.animation} />
-      </div>
+      </CSSTransitionGroup>
     );
   }
 }

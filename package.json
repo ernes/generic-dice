@@ -8,10 +8,10 @@
   "description": "A generic dice UI component rendered with React.js",
   "main": "index.js",
   "scripts": {
-    "postinstall": "npm run build && npm run demo",
+    "postinstall": "npm run build && npm run examples",
     "lint": "node ./node_modules/.bin/eslint .",
     "build": "node ./node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js --progress --colors",
-    "demo": "node ./node_modules/webpack/bin/webpack.js --config ./demo/webpack.config.js --progress --colors",
+    "examples": "node ./node_modules/webpack/bin/webpack.js --config ./examples/webpack.config.js --progress --colors",
     "dev": "node ./node_modules/webpack/bin/webpack.js -w",
     "test": "jest ./components/ -u"
   },
@@ -55,6 +55,7 @@
   "private": false,
   "dependencies": {
     "react": "15.3.1",
+    "react-addons-css-transition-group": "15.3.1",
     "react-dom": "15.3.1"
   },
   "devDependencies": {

@@ -22,7 +22,7 @@ npm install -g webpack@1.12.14 eslint@2.6.0 eslint-config-airbnb@6.2.0 eslint-pl
 
 ## Install project dependencies
 
-The main generic dice component and the demo will be built automatically after the dependencies are installed.
+The main generic dice component and the examples will be built automatically after the dependencies are installed.
 
 ```
 npm install
@@ -56,7 +56,7 @@ npm test
 
 ### Run the project locally
 
-See the demo to view sample usage of this React.js component.
+See the examples to view sample usage of this React.js component.
 
 ### Initial setup to publish on npm
 
