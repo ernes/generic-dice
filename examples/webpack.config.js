@@ -1,6 +1,30 @@
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const config = require('../config.json');
 
+let filename;
+let uglifyConfig;
+if (config.NODE_ENV === '\"production\"') {
+  filename = 'game.min.js';
+  uglifyConfig = {
+    compress: {
+      warnings: false,
+    },
+    mangle: true,
+    beautify: false,
+    sourceMap: true,
+  };
+} else {
+  filename = 'game.js';
+  uglifyConfig = {
+    compress: false,
+    mangle: false,
+    beautify: true,
+    sourceMap: false,
+  };
+}
 
 module.exports = {
   context: `${__dirname}`,
@@ -10,7 +34,7 @@ module.exports = {
   devtool: 'source-map',
   output: {
     path: `${__dirname}/dist`,
-    filename: 'game.min.js',
+    filename,
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.scss'],
@@ -36,20 +60,36 @@ module.exports = {
           mimetype: 'image/png',
         },
       },
+      {
+        test: /\.ejs$/,
+        loader: 'pug',
+      },
     ],
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
+    new webpack.optimize.UglifyJsPlugin(uglifyConfig),
+
+    new CopyWebpackPlugin([
+      {
+        from: 'src/robots.txt',
       },
+    ],
+      {
+        copyUnmodified: true,
+      }
+    ),
+
+    new HtmlWebpackPlugin({
+      title: 'Generic Dice examples',
+      template: 'src/template.ejs',
+      hash: true,
     }),
 
-    // For Production, make sure to include this plugin definition
-    // to prevent the bundle from including development-only warning for React.
+    // Development: set NODE_ENV to "\"development\"" in config.json
+    // Production: set NODE_ENV to "\"production\"" in config.json
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: '"production"',
+        NODE_ENV: config.NODE_ENV,
       },
     }),
   ],

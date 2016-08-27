@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { CSSTransitionGroup } from 'react-addons-css-transition-group';
+import CSSTransitionGroup from 'react-addons-css-transition-group';
 
 import DiceFace from '../dice-face/dice-face';
 import DiceShadow from '../dice-shadow/dice-shadow';
