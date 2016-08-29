@@ -55,6 +55,7 @@ export default class GenericDice extends Component {
   render() {
     const diceClass = `dice ${this.state.animation || ''}`;
 
+    // See: https://facebook.github.io/react/docs/animation.html
     return (
       <CSSTransitionGroup
         transitionName="rollTransition"
