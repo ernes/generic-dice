@@ -57,6 +57,9 @@ export default class GenericDice extends Component {
 
     return (
       <CSSTransitionGroup
+        transitionName="rollTransition"
+        transitionEnterTimeout={500}
+        transitionLeaveTimeout={300}
         component="div"
         className="dice-wrapper"
         style={{ fontSize: `${this.props.size}px` }}
