@@ -1,5 +1,4 @@
-# Generic-Dice
-[![wercker status](https://app.wercker.com/status/bad03c20d556f581adbae06b83f1528f/m/master "wercker status")](https://app.wercker.com/project/byKey/bad03c20d556f581adbae06b83f1528f)
+# Generic-Dice [![wercker status](https://app.wercker.com/status/bad03c20d556f581adbae06b83f1528f/s/master "wercker status")](https://app.wercker.com/project/byKey/bad03c20d556f581adbae06b83f1528f) [![generic-dice](http://img.shields.io/npm/dm/generic-dice.svg)](https://www.npmjs.org/package/generic-dice)
 
 Generic dice to add to any game using React.js
 
@@ -77,7 +76,19 @@ render((
 ), document.getElementById('game'));
 ```
 
-## Credits
+## Maintainers
 
 - Ernesto Paniagua: Developer and Designer
 - Nadjib Amar: Developer
+
+Please fork this repository and improve our code; pull requests are welcome.
+
+The [main repository](https://github.com/gyroscopico/generic-dice) also has a list of issues, feel free to [report new issues](https://github.com/gyroscopico/generic-dice/issues) as you find them.
+
+Documentation and unit testing are good starting points to contribute to this repository, but if you have some features you want to add to it, feel free to do so.
+
+## Further development
+
+If you want to develop this component further, please see the [Development help](DEVELOP.md) file.
+
+[Change log](CHANGELOG.md)

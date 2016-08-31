@@ -2,7 +2,7 @@ box: node
 build:
   steps:
     - npm-install
-    # todo: add npm-test once unit tests have been written.
+    - npm-test
     - script:
         name: lint source code
         code: npm run lint
@@ -10,5 +10,5 @@ build:
         name: build source code
         code: npm run build
     - script:
-        name: build demo code
-        code: npm run demo
+        name: build examples code
+        code: npm run examples
