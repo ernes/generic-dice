@@ -54,7 +54,7 @@ export default class GenericDice extends Component {
   render() {
     const diceClass = `dice ${this.state.animation || ''}`;
     const animationDuration = (this.state.duration || 0) / 1000;
-    const animationStyle = { animationDuration: `${animationDuration}s !important`, backgroundColor: 'fuchsia' };
+    const animationStyle = { animationDuration: `${animationDuration}s`, backgroundColor: 'fuchsia' };
 
     // See: https://facebook.github.io/react/docs/animation.html
     return (
