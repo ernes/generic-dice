@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CSSTransitionGroup from 'react-addons-css-transition-group';
 
 import DiceFace from '../dice-face/dice-face';
 import DiceShadow from '../dice-shadow/dice-shadow';
@@ -57,13 +56,7 @@ export default class GenericDice extends Component {
 
     // See: https://facebook.github.io/react/docs/animation.html
     return (
-      <CSSTransitionGroup
-        transitionName="rolling"
-        transitionAppear
-        transitionAppearTimeout={30}
-        transitionEnterTimeout={50}
-        transitionLeaveTimeout={30}
-        component="div"
+      <div
         className="dice-wrapper"
         style={{ fontSize: `${this.props.size}px` }}
       >
@@ -75,7 +68,7 @@ export default class GenericDice extends Component {
           <DiceFace face={this.state.face} key="diceFace" />
         </div>
         <DiceShadow animation={this.state.animation} key="diceShadow" />
-      </CSSTransitionGroup>
+      </div>
     );
   }
 }
