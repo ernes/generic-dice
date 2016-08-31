@@ -14,13 +14,8 @@ Although it's possible to just run the index.html in the dist directory in the b
 
 ```
 npm install -g http-server
-cd examples
+cd examples/dist
 http-server .
 ```
 
 Browse to http://localhost:8080 or whichever port was free at the time you run the `http-server .` command.
-
-
-
-
-
