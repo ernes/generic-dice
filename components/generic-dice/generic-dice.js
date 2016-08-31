@@ -21,7 +21,7 @@ export default class GenericDice extends Component {
 
   // @animation: string CSS class parameter that can be 'thrown' or ''.
   // @duration: length of time in milliseconds during which the animation should last.
-  roll(animation = 'thrown', duration = 2000) {
+  roll(duration = 2000, animation = 'thrown') {
     let start;
     let animationId = null;
 
@@ -53,6 +53,8 @@ export default class GenericDice extends Component {
 
   render() {
     const diceClass = `dice ${this.state.animation || ''}`;
+    const animationDuration = (this.state.duration || 0) / 1000;
+    const animationStyle = { animationDuration: `${animationDuration}s !important`, backgroundColor: 'fuchsia' };
 
     // See: https://facebook.github.io/react/docs/animation.html
     return (
@@ -62,12 +64,16 @@ export default class GenericDice extends Component {
       >
         <div
           className={diceClass}
+          style={animationStyle}
           ref="dice"
           key="dice"
         >
           <DiceFace face={this.state.face} key="diceFace" />
         </div>
-        <DiceShadow animation={this.state.animation} key="diceShadow" />
+        <DiceShadow
+          style={animationStyle}
+          animation={this.state.animation} key="diceShadow"
+        />
       </div>
     );
   }
