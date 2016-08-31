@@ -22,3 +22,21 @@
     animation-name: thrown;
   }
 }
+
+.rolling-enter {
+  opacity: 0.01;
+}
+
+.rolling-enter.rolling-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.rolling-leave {
+  opacity: 1;
+}
+
+.rolling-leave.rolling-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}

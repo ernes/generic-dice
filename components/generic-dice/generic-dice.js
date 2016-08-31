@@ -58,9 +58,11 @@ export default class GenericDice extends Component {
     // See: https://facebook.github.io/react/docs/animation.html
     return (
       <CSSTransitionGroup
-        transitionName="rollTransition"
-        transitionEnterTimeout={500}
-        transitionLeaveTimeout={300}
+        transitionName="rolling"
+        transitionAppear
+        transitionAppearTimeout={30}
+        transitionEnterTimeout={50}
+        transitionLeaveTimeout={30}
         component="div"
         className="dice-wrapper"
         style={{ fontSize: `${this.props.size}px` }}
