@@ -68,10 +68,11 @@ export default class GenericDice extends Component {
         <div
           className={diceClass}
           ref="dice"
+          key="dice"
         >
-          <DiceFace face={this.state.face} />
+          <DiceFace face={this.state.face} key="diceFace" />
         </div>
-        <DiceShadow animation={this.state.animation} />
+        <DiceShadow animation={this.state.animation} key="diceShadow" />
       </CSSTransitionGroup>
     );
   }
