@@ -6,7 +6,6 @@ import renderer from 'react-test-renderer';
 import GenericDice from '../generic-dice';
 
 jest.mock('../generic-dice');
-jest.mock('react-dom');
 
 describe('GenericDice', () => {
   it('exists.', () => {
