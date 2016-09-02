@@ -30,16 +30,10 @@ Note: to check how up to date the dependencies are, run `npm-check` if it's alre
 npm run build-all
 ```
 
-### Build the main module continuously while developing
+### Build the main module and the examples continuously while developing
 
 ```
 npm run dev
-```
-
-### Build the examples continuously while developing
-
-```
-npm run dev-examples
 ```
 
 ### Lint the project once
