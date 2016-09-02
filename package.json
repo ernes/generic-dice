@@ -1,6 +1,6 @@
 {
   "name": "generic-dice",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "devEngines": {
     "node": "6.x",
     "npm": "3.x"
@@ -13,8 +13,7 @@
     "lint": "node ./node_modules/.bin/eslint .",
     "build": "node ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js --progress --colors",
     "examples": "node ./node_modules/webpack/bin/webpack.js --config ./examples/webpack.config.js --progress --colors",
-    "dev": "node ./node_modules/webpack/bin/webpack.js -w --config ./webpack.config.js --progress --colors",
-    "dev-examples": "node ./node_modules/webpack/bin/webpack.js -w --config ./examples/webpack.config.js --progress --colors",
+    "dev": "node ./node_modules/webpack/bin/webpack.js -w --config ./webpack.config.js --progress --colors & node ./node_modules/webpack/bin/webpack.js -w --config ./examples/webpack.config.js --progress --colors",
     "test": "jest ./components/ -u"
   },
   "jest": {

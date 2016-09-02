@@ -3,6 +3,7 @@ A tag is created for each release from the master branch.
 
 ### Current version being developped
 
+- 1.1.5 Support bulding plain Javascript (issue 21)
 
 ### Release history
 - 1.1.4 Unit testing.
