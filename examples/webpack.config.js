@@ -5,10 +5,10 @@ const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 
 const config = require('../config.json');
 
-let reactBundle;
+let filename;
 let uglifyConfig;
 if (config.NODE_ENV === '\"production\"') {
-  reactBundle = '[name].min.js';
+  filename = '[name].min.js';
   uglifyConfig = {
     compress: {
       warnings: false,
@@ -18,7 +18,7 @@ if (config.NODE_ENV === '\"production\"') {
     sourceMap: true,
   };
 } else {
-  reactBundle = '[name].js';
+  filename = '[name].js';
   uglifyConfig = {
     compress: false,
     mangle: false,
@@ -36,7 +36,7 @@ module.exports = {
   devtool: 'source-map',
   output: {
     path: `${__dirname}/dist`,
-    filename: reactBundle,
+    filename,
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.scss'],
