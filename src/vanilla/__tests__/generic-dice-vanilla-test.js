@@ -26,4 +26,11 @@ describe('GenericDice', () => {
 
     expect(dice.animation).toBe('');
   });
+
+  it('outputs something when the render function is called', () => {
+    const dice = new GenericDice();
+    const result = dice.render();
+
+    expect(result).toBeDefined();
+  });
 });
