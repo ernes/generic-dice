@@ -6,7 +6,7 @@
     "npm": "3.x"
   },
   "description": "A generic dice UI component rendered with React.js",
-  "main": "index.js",
+  "main": "reactSource.js",
   "scripts": {
     "postinstall": "npm run build-all",
     "build-all": "npm run build && npm run examples",

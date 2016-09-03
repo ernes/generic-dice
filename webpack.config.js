@@ -27,7 +27,7 @@ if (config.NODE_ENV === '\"production\"') {
 module.exports = {
   context: `${__dirname}`,
   entry: {
-    bundle: './index',
+    bundle: './reactSource',
   },
   devtool: 'source-map',
   output: {

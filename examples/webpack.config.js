@@ -7,7 +7,7 @@ const config = require('../config.json');
 let reactBundle;
 let uglifyConfig;
 if (config.NODE_ENV === '\"production\"') {
-  reactBundle = 'game.min.js';
+  reactBundle = '[name].min.js';
   uglifyConfig = {
     compress: {
       warnings: false,
@@ -17,7 +17,7 @@ if (config.NODE_ENV === '\"production\"') {
     sourceMap: true,
   };
 } else {
-  reactBundle = 'game.js';
+  reactBundle = '[name].js';
   uglifyConfig = {
     compress: false,
     mangle: false,
@@ -29,7 +29,7 @@ if (config.NODE_ENV === '\"production\"') {
 module.exports = {
   context: `${__dirname}`,
   entry: {
-    reactBundle: './src/game',
+    reactBundle: './src/reactBundle',
   },
   devtool: 'source-map',
   output: {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import Dice from '../../index';
+import Dice from '../../reactSource';
 
 render((
   <div>
@@ -12,4 +12,4 @@ render((
     <Dice face={3} size={10} />
     <Dice face={2} size={10} />
   </div>
-), document.getElementById('game'));
+), document.getElementById('react-game'));
