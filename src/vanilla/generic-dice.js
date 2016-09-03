@@ -9,6 +9,7 @@ export default class GenericDice {/* istanbul ignore next */
   // Return an HTML node that can be appended to the DOM.
   render() {
     const html = document.createElement('div');
+    html.textContent = 'Generic Dice is build from this node.';
 
     return html;
   }

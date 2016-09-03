@@ -93,6 +93,7 @@
     "sorted-object": "2.0.0",
     "style-loader": "0.13.0",
     "url-loader": "0.5.7",
-    "webpack": "1.12.14"
+    "webpack": "1.12.14",
+    "webpack-cleanup-plugin": "0.3.1"
   }
 }

@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 
 const config = require('../config.json');
 
@@ -68,6 +69,8 @@ module.exports = {
     ],
   },
   plugins: [
+    new WebpackCleanupPlugin(),
+
     new webpack.optimize.UglifyJsPlugin(uglifyConfig),
 
     new CopyWebpackPlugin([
@@ -88,16 +91,16 @@ module.exports = {
       inject: false,
     }),
     new HtmlWebpackPlugin({
-      title: 'React.js examples',
-      template: 'src/react-js-examples.ejs',
-      filename: 'react-js-examples.html',
+      title: 'React examples',
+      template: 'src/react-examples.ejs',
+      filename: 'react-examples.html',
       hash: true,
       inject: false,
     }),
     new HtmlWebpackPlugin({
-      title: 'Vanilla.js examples',
-      template: 'src/vanilla-js-examples.ejs',
-      filename: 'vanilla-js-examples.html',
+      title: 'Vanilla examples',
+      template: 'src/vanilla-examples.ejs',
+      filename: 'vanilla-examples.html',
       hash: true,
       inject: false,
     }),
