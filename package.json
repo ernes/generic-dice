@@ -14,11 +14,12 @@
     "build": "node ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js --progress --colors",
     "examples": "node ./node_modules/webpack/bin/webpack.js --config ./examples/webpack.config.js --progress --colors",
     "dev": "node ./node_modules/webpack/bin/webpack.js -w --config ./webpack.config.js --progress --colors & node ./node_modules/webpack/bin/webpack.js -w --config ./examples/webpack.config.js --progress --colors",
-    "test": "jest ./components/ -u"
+    "test": "jest ./src/react/ -u && jest ./src/vanilla-js/ -u"
   },
   "jest": {
     "testPathDirs": [
-      "components/"
+      "src/react/",
+      "src/vanilla-js/"
     ],
     "scriptPreprocessor": "./scripts/jest/preprocessor.js",
     "automock": true,
