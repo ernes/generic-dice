@@ -1,3 +1,3 @@
-import GenericDice from './src/vanilla/generic-dice';
+import GenericDiceVanilla from './src/vanilla/generic-dice';
 
-export default GenericDice;
+export default GenericDiceVanilla;
