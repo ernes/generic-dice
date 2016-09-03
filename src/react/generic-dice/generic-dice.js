@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import DiceFace from '../dice-face/dice-face';
-import DiceShadow from '../dice-shadow/dice-shadow';
 import './generic-dice.scss';
 
 export default class GenericDice extends Component {
@@ -52,7 +50,22 @@ export default class GenericDice extends Component {
   }
 
   render() {
+    // Main dice container.
     const diceClass = `dice ${this.state.animation || ''}`;
+
+    // Dice face.
+    const face = this.state.face;
+    const faces = [];
+    for (let index = 1; index <= face; index++) {
+      const key = `dot-${index}-${face}`;
+      const faceClass = `dice-dot ${key} dots-${face}`;
+      faces.push(
+        <div className={faceClass} key={key} />
+      );
+    }
+
+    // Dice shadow.
+    const diceShadowClass = `dice-shadow ${this.state.animation || ''}`;
 
     // See: https://facebook.github.io/react/docs/animation.html
     return (
@@ -65,9 +78,11 @@ export default class GenericDice extends Component {
           ref="dice"
           key="dice"
         >
-          <DiceFace face={this.state.face} key="diceFace" />
+          <div className="dice-face" key="diceFace">
+            {faces}
+          </div>
         </div>
-        <DiceShadow animation={this.state.animation} key="diceShadow" />
+        <div className={diceShadowClass} key="diceShadow" />
       </div>
     );
   }
