@@ -81,8 +81,26 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       title: 'Generic Dice examples',
-      template: 'src/template.ejs',
+      template: 'src/index.ejs',
+      filename: 'index.html',
       hash: true,
+      inject: false,
+    }),
+    new HtmlWebpackPlugin({
+      title: 'React.js examples',
+      template: 'src/react-js-examples.ejs',
+      filename: 'react-js-examples.html',
+      hash: true,
+      inject: true,
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Vanilla.js examples',
+      template: 'src/vanilla-js-examples.ejs',
+      filename: 'vanilla-js-examples.html',
+      hash: true,
+      inject: false,  // I need to figure out how to inject
+                      // the correct javascript bundle,
+                      // not the React one.
     }),
 
     // Development: set NODE_ENV to "\"development\"" in config.json
