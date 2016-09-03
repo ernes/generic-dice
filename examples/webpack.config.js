@@ -29,7 +29,7 @@ if (config.NODE_ENV === '\"production\"') {
 module.exports = {
   context: `${__dirname}`,
   entry: {
-    bundle: './src/game',
+    reactBundle: './src/game',
   },
   devtool: 'source-map',
   output: {
@@ -82,21 +82,21 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Generic Dice examples',
       template: 'src/index.ejs',
-      reactBundle: 'index.html',
+      filename: 'index.html',
       hash: true,
       inject: false,
     }),
     new HtmlWebpackPlugin({
       title: 'React.js examples',
       template: 'src/react-js-examples.ejs',
-      reactBundle: 'react-js-examples.html',
+      filename: 'react-js-examples.html',
       hash: true,
       inject: true,
     }),
     new HtmlWebpackPlugin({
       title: 'Vanilla.js examples',
       template: 'src/vanilla-js-examples.ejs',
-      reactBundle: 'vanilla-js-examples.html',
+      filename: 'vanilla-js-examples.html',
       hash: true,
       inject: false,  // I need to figure out how to inject
                       // the correct javascript bundle,
