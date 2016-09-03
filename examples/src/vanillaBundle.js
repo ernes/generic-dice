@@ -1,5 +1,6 @@
 import Dice from '../../vanillaSource';
 
 const dice = new Dice();
+const htmlNode = dice.render();
 
-dice.appendTo(document.getElementById('vanilla-game'));
+document.getElementById('vanilla-game').appendChild(htmlNode);

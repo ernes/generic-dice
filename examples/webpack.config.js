@@ -30,6 +30,7 @@ module.exports = {
   context: `${__dirname}`,
   entry: {
     reactBundle: './src/reactBundle',
+    vanillaBundle: './src/vanillaBundle',
   },
   devtool: 'source-map',
   output: {
@@ -91,16 +92,14 @@ module.exports = {
       template: 'src/react-js-examples.ejs',
       filename: 'react-js-examples.html',
       hash: true,
-      inject: true,
+      inject: false,
     }),
     new HtmlWebpackPlugin({
       title: 'Vanilla.js examples',
       template: 'src/vanilla-js-examples.ejs',
       filename: 'vanilla-js-examples.html',
       hash: true,
-      inject: false,  // I need to figure out how to inject
-                      // the correct javascript bundle,
-                      // not the React one.
+      inject: false,
     }),
 
     // Development: set NODE_ENV to "\"development\"" in config.json
