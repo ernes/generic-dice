@@ -1,3 +1,3 @@
-import GenericDice from './components/generic-dice/generic-dice';
+import GenericDice from './src/react/generic-dice/generic-dice';
 
 export default GenericDice;
