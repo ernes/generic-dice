@@ -67,7 +67,6 @@ export default class GenericDice extends Component {
     // Dice shadow.
     const diceShadowClass = `dice-shadow ${this.state.animation || ''}`;
 
-    // See: https://facebook.github.io/react/docs/animation.html
     return (
       <div
         className="dice-wrapper"
