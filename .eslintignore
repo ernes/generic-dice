@@ -3,7 +3,6 @@ jsconfig.json
 .eslintrc
 .babelrc
 node_modules
-server.js
 npm-debug.log
 *.scss
 dist
