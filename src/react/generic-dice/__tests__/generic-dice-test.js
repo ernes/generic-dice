@@ -2,6 +2,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+import jsdom from 'jsdom';
 
 import GenericDice from '../generic-dice';
 
