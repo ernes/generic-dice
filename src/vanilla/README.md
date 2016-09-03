@@ -1,4 +1,4 @@
-# Vanilla JS source code of generic-dice
+# Vanilla JS source code of generic-dice-vanilla
 
 This directory contains the source code of the "Vanilla" Javascript version of generic-dice.
 

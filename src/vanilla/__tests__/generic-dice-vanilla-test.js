@@ -1,8 +1,8 @@
 /* global describe jest it expect */
 
-import GenericDice from '../generic-dice';
+import GenericDice from '../generic-dice-vanilla';
 
-jest.unmock('../generic-dice');
+jest.unmock('../generic-dice-vanilla');
 
 describe('GenericDice', () => {
   it('exists.', () => {
