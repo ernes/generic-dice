@@ -24,7 +24,7 @@ if (isProduction) {
     compress: false,
     mangle: false,
     beautify: true,
-    sourceMap: false,
+    sourceMap: true,
   };
 }
 

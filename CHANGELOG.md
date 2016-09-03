@@ -3,7 +3,10 @@ A tag is created for each release from the master branch.
 
 ### Current version being developped
 
-- 1.1.5 Support bulding plain Javascript (issue 21)
+- 1.1.5:
+  Support bulding plain Javascript (issue 21)
+  Refactor dice-face and dice-shadow into the main generic-dice component (issue 29)
+  Fix installing generic-dice as an npm module (issue 30)
 
 ### Release history
 - 1.1.4 Unit testing.

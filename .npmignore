@@ -1,3 +1,7 @@
 assets
 DEVELOP.md
 jsconfig.json
+coverage
+__tests__
+scripts
+wercker.yml
