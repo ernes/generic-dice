@@ -7,7 +7,8 @@ const config = require('../config.json');
 
 let filename;
 let uglifyConfig;
-if (config.NODE_ENV === '\"production\"') {
+const isProduction = config.NODE_ENV === '\"production\"';
+if (isProduction) {
   filename = '[name].min.js';
   uglifyConfig = {
     compress: {
@@ -84,21 +85,23 @@ module.exports = {
     ),
 
     new HtmlWebpackPlugin({
-      title: 'Generic Dice examples',
+      title: 'Generic Dice',
       template: 'src/index.ejs',
       filename: 'index.html',
       hash: true,
       inject: false,
     }),
     new HtmlWebpackPlugin({
-      title: 'React examples',
+      title: 'React.js examples',
+      bundle: (isProduction) ? 'reactBundle.min.js' : 'reactBundle.js',
       template: 'src/react-examples.ejs',
       filename: 'react-examples.html',
       hash: true,
       inject: false,
     }),
     new HtmlWebpackPlugin({
-      title: 'Vanilla examples',
+      title: 'Vanilla Javascript examples',
+      bundle: (isProduction) ? 'vanillaBundle.min.js' : 'vanillaBundle.js',
       template: 'src/vanilla-examples.ejs',
       filename: 'vanilla-examples.html',
       hash: true,
