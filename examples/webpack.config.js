@@ -4,10 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = require('../config.json');
 
-let filename;
+let reactBundle;
 let uglifyConfig;
 if (config.NODE_ENV === '\"production\"') {
-  filename = 'game.min.js';
+  reactBundle = 'game.min.js';
   uglifyConfig = {
     compress: {
       warnings: false,
@@ -17,7 +17,7 @@ if (config.NODE_ENV === '\"production\"') {
     sourceMap: true,
   };
 } else {
-  filename = 'game.js';
+  reactBundle = 'game.js';
   uglifyConfig = {
     compress: false,
     mangle: false,
@@ -34,7 +34,7 @@ module.exports = {
   devtool: 'source-map',
   output: {
     path: `${__dirname}/dist`,
-    filename,
+    filename: reactBundle,
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.scss'],
@@ -82,21 +82,21 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Generic Dice examples',
       template: 'src/index.ejs',
-      filename: 'index.html',
+      reactBundle: 'index.html',
       hash: true,
       inject: false,
     }),
     new HtmlWebpackPlugin({
       title: 'React.js examples',
       template: 'src/react-js-examples.ejs',
-      filename: 'react-js-examples.html',
+      reactBundle: 'react-js-examples.html',
       hash: true,
       inject: true,
     }),
     new HtmlWebpackPlugin({
       title: 'Vanilla.js examples',
       template: 'src/vanilla-js-examples.ejs',
-      filename: 'vanilla-js-examples.html',
+      reactBundle: 'vanilla-js-examples.html',
       hash: true,
       inject: false,  // I need to figure out how to inject
                       // the correct javascript bundle,
