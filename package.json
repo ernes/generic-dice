@@ -14,7 +14,7 @@
     "build": "node ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js --progress --colors",
     "examples": "node ./node_modules/webpack/bin/webpack.js --config ./examples/webpack.config.js --progress --colors",
     "dev": "node ./node_modules/webpack/bin/webpack.js -w --config ./webpack.config.js --progress --colors & node ./node_modules/webpack/bin/webpack.js -w --config ./examples/webpack.config.js --progress --colors",
-    "test": "jest ./src/"
+    "test": "jest ./src/ -u"
   },
   "jest": {
     "testPathDirs": [
@@ -24,7 +24,9 @@
     "scriptPreprocessor": "./scripts/jest/preprocessor.js",
     "automock": true,
     "unmockedModulePathPatterns": [
-      "react"
+      "./node_modules/react",
+      "./node_modules/react-dom",
+      "./node_modules/babel-runtime"
     ],
     "coverageThreshold": {
       "global": {

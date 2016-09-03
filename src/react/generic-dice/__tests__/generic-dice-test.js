@@ -5,7 +5,7 @@ import renderer from 'react-test-renderer';
 
 import GenericDice from '../generic-dice';
 
-jest.mock('../generic-dice');
+jest.unmock('../generic-dice');
 
 describe('GenericDice', () => {
   it('exists.', () => {
