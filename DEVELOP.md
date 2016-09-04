@@ -73,6 +73,19 @@ npm login
 npm publish
 ```
 
+### npm packages hygiene
+
+Regularly check the dependencies are healthy ones, at least before a new release is made.
+
+If it's not already installed on your machine:
+
+```
+npm install -g npm-check
+```
+
+To use, run `npm-check`
+
+
 ## Visual Studio Code setup [optional]
 
 In your settings.json (User Settings), the following can be set to lint this project inline:
