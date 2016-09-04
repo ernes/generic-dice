@@ -8,9 +8,9 @@
   "description": "A generic dice UI component rendered with React.js",
   "main": "reactSource.js",
   "scripts": {
-    "build-all": "npm run build && npm run examples",
+    "build": "npm run generic-dice && npm run examples",
     "lint": "node ./node_modules/.bin/eslint .",
-    "build": "node ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js --progress --colors",
+    "generic-dice": "node ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js --progress --colors",
     "examples": "node ./node_modules/webpack/bin/webpack.js --config ./examples/webpack.config.js --progress --colors",
     "dev": "node ./node_modules/webpack/bin/webpack.js -w --config ./webpack.config.js --progress --colors & node ./node_modules/webpack/bin/webpack.js -w --config ./examples/webpack.config.js --progress --colors",
     "test": "jest ./src/ -u"

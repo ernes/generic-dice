@@ -24,10 +24,10 @@ npm install
 
 Note: to check how up to date the dependencies are, run `npm-check` if it's already installed globally via `npm install npm-check -g`.
 
-### Build once the project and the examples
+### Build once the generic-dice module and the examples
 
 ```
-npm run build-all
+npm run build
 ```
 
 ### Build the main module and the examples continuously while developing
