@@ -16,8 +16,6 @@
     "test": "jest ./src/ -u"
   },
   "jest": {
-    "browser": true,
-    "testEnvironment": "jsdom",
     "testPathDirs": [
       "src/react/",
       "src/vanilla/"
