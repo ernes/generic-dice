@@ -64,8 +64,10 @@ npm login
 - Check the package.json version is correct.
 - Edit `config.json` so that NODE_ENV is set to production, not development.
 - Run `npm run build-all` to update all dist packages (main module and examples).
-- Make sure a `git tag` has been created for the version to publish.
 - Update the `CHANGELOG.md` file.
+- Make sure a `git tag` has been created for the version to publish.
+- Publish the code to master `git push origin master`
+- Publish the tag `git push --tags`
 
 ```
 npm publish
