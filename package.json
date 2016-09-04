@@ -29,10 +29,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "statements": 70,
-        "branches": 40,
-        "functions": 70,
-        "lines": 60
+        "statements": 85,
+        "branches": 55,
+        "functions": 90,
+        "lines": 80
       }
     }
   },
@@ -92,7 +92,6 @@
     "react-addons-test-utils": "~15.3.1",
     "react-test-renderer": "15.3.0",
     "sass-loader": "3.2.0",
-    "sorted-object": "2.0.0",
     "style-loader": "0.13.0",
     "url-loader": "0.5.7",
     "webpack": "~1.13.2",
