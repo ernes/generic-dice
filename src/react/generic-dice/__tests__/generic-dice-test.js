@@ -5,21 +5,24 @@ import renderer from 'react-test-renderer';
 
 import GenericDice from '../generic-dice';
 
-jest.mock('../generic-dice');
+jest.unmock('../generic-dice');
 
 describe('GenericDice', () => {
   it('exists.', () => {
     expect(GenericDice).toBeDefined();
   });
 
-  it('renders an element that is rolling by default.', () => {
-    const component = renderer.create(
-      <GenericDice />
-    );
-    const tree = component.toJSON();
-
-    // todo: check the rolling property is indeed true.
-
+  it('renders a snapshot', () => {
+    const tree = renderer.create(<GenericDice />).toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  it('renders a snapshot that is not null', () => {
+    const tree = renderer.create(<GenericDice />).toJSON();
+    expect(tree).not.toEqual(null);
+  });
+
+  it('is co-existent with a window object to represent the DOM', () => {
+    expect(window).toBeDefined();
   });
 });

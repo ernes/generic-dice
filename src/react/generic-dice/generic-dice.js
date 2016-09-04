@@ -74,7 +74,6 @@ export default class GenericDice extends Component {
       >
         <div
           className={diceClass}
-          ref="dice"
           key="dice"
         >
           <div className="dice-face" key="diceFace">
