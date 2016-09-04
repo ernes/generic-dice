@@ -81,7 +81,6 @@
     "html-webpack-plugin": "2.22.0",
     "jest": "14.1.0",
     "jest-cli": "14.1.0",
-    "jsdom": "9.5.0",
     "left-pad": "azer/left-pad",
     "node-sass": "3.8.0",
     "promise-polyfill": "4.0.3",
