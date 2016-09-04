@@ -1,32 +1,36 @@
 /* global describe jest it expect */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import ReactDOM from 'react-dom';
+import TestUtils from 'react-addons-test-utils';
+import requestAnimationFrame from 'raf.js';
 
 import GenericDice from '../generic-dice';
 
 jest.unmock('../generic-dice');
+
+// Use polyfill from raf.js if requestAnimationFrame is not available.
+if (!window.requestAnimationFrame) {
+  window.requestAnimationFrame = requestAnimationFrame;
+}
 
 describe('GenericDice', () => {
   it('exists.', () => {
     expect(GenericDice).toBeDefined();
   });
 
-  it('is co-existent with a window object to represent the DOM', () => {
+  it('co-exists with a window object to represent the DOM', () => {
     expect(window).toBeDefined();
   });
 
-  it('renders a snapshot', () => {
-    const component = renderer.create(<GenericDice />);
-    const tree = component.toJSON();
-
-    expect(tree).toMatchSnapshot();
+  it('co-exists with the requestAnimationFrame function from the window DOM object', () => {
+    expect(window.requestAnimationFrame).toBeDefined();
   });
 
-  it('renders a snapshot that is not null', () => {
-    const component = renderer.create(<GenericDice />);
-    const tree = component.toJSON();
+  it('can be rendered and found in the ReactDOM', () => {
+    const component = TestUtils.renderIntoDocument(<GenericDice />);
+    const result = ReactDOM.findDOMNode(component);
 
-    expect(tree).not.toEqual(null);
+    expect(result).toBeDefined();
   });
 });
