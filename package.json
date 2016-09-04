@@ -90,7 +90,6 @@
     "pug-loader": "2.3.0",
     "raf.js": "0.0.4",
     "react-addons-test-utils": "~15.3.1",
-    "react-test-renderer": "~15.3.1",
     "sass-loader": "~4.0.1",
     "style-loader": "~0.13.1",
     "url-loader": "0.5.7",
