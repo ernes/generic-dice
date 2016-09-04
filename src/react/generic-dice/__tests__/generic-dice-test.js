@@ -2,11 +2,10 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import jsdom from 'jsdom';
 
 import GenericDice from '../generic-dice';
 
-jest.unmock('../generic-dice');
+jest.mock('../generic-dice');
 
 describe('GenericDice', () => {
   it('exists.', () => {
