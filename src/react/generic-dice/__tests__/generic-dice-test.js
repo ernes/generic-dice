@@ -19,14 +19,6 @@ describe('GenericDice', () => {
     expect(GenericDice).toBeDefined();
   });
 
-  it('co-exists with a window object to represent the DOM', () => {
-    expect(window).toBeDefined();
-  });
-
-  it('co-exists with the requestAnimationFrame function from the window DOM object', () => {
-    expect(window.requestAnimationFrame).toBeDefined();
-  });
-
   it('can be rendered and found in the ReactDOM', () => {
     const component = TestUtils.renderIntoDocument(<GenericDice />);
     const result = ReactDOM.findDOMNode(component);
