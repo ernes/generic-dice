@@ -1,13 +1,15 @@
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 
 const config = require('../config.json');
 
 let filename;
 let uglifyConfig;
-if (config.NODE_ENV === '\"production\"') {
-  filename = 'game.min.js';
+const isProduction = config.NODE_ENV === '\"production\"';
+if (isProduction) {
+  filename = '[name].min.js';
   uglifyConfig = {
     compress: {
       warnings: false,
@@ -17,19 +19,20 @@ if (config.NODE_ENV === '\"production\"') {
     sourceMap: true,
   };
 } else {
-  filename = 'game.js';
+  filename = '[name].js';
   uglifyConfig = {
     compress: false,
     mangle: false,
     beautify: true,
-    sourceMap: false,
+    sourceMap: true,
   };
 }
 
 module.exports = {
   context: `${__dirname}`,
   entry: {
-    bundle: './src/game',
+    reactBundle: './src/reactBundle',
+    vanillaBundle: './src/vanillaBundle',
   },
   devtool: 'source-map',
   output: {
@@ -67,6 +70,8 @@ module.exports = {
     ],
   },
   plugins: [
+    new WebpackCleanupPlugin(),
+
     new webpack.optimize.UglifyJsPlugin(uglifyConfig),
 
     new CopyWebpackPlugin([
@@ -80,9 +85,27 @@ module.exports = {
     ),
 
     new HtmlWebpackPlugin({
-      title: 'Generic Dice examples',
-      template: 'src/template.ejs',
+      title: 'Generic Dice',
+      template: 'src/index.ejs',
+      filename: 'index.html',
       hash: true,
+      inject: false,
+    }),
+    new HtmlWebpackPlugin({
+      title: 'React.js examples',
+      bundle: (isProduction) ? 'reactBundle.min.js' : 'reactBundle.js',
+      template: 'src/react-examples.ejs',
+      filename: 'react-examples.html',
+      hash: true,
+      inject: false,
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Vanilla Javascript examples',
+      bundle: (isProduction) ? 'vanillaBundle.min.js' : 'vanillaBundle.js',
+      template: 'src/vanilla-examples.ejs',
+      filename: 'vanilla-examples.html',
+      hash: true,
+      inject: false,
     }),
 
     // Development: set NODE_ENV to "\"development\"" in config.json

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import DiceFace from '../dice-face/dice-face';
-import DiceShadow from '../dice-shadow/dice-shadow';
 import './generic-dice.scss';
 
 export default class GenericDice extends Component {
@@ -21,7 +19,7 @@ export default class GenericDice extends Component {
 
   // @animation: string CSS class parameter that can be 'thrown' or ''.
   // @duration: length of time in milliseconds during which the animation should last.
-  roll(duration = 2000, animation = 'thrown') {
+  roll(animation = 'thrown', duration = 2000) {
     let start;
     let animationId = null;
 
@@ -52,11 +50,23 @@ export default class GenericDice extends Component {
   }
 
   render() {
+    // Main dice container.
     const diceClass = `dice ${this.state.animation || ''}`;
-    const animationDuration = (this.state.duration || 0) / 1000;
-    const animationStyle = { animationDuration: `${animationDuration}s`, backgroundColor: 'fuchsia' };
 
-    // See: https://facebook.github.io/react/docs/animation.html
+    // Dice face.
+    const face = this.state.face;
+    const faces = [];
+    for (let index = 1; index <= face; index++) {
+      const key = `dot-${index}-${face}`;
+      const faceClass = `dice-dot ${key} dots-${face}`;
+      faces.push(
+        <div className={faceClass} key={key} />
+      );
+    }
+
+    // Dice shadow.
+    const diceShadowClass = `dice-shadow ${this.state.animation || ''}`;
+
     return (
       <div
         className="dice-wrapper"
@@ -64,16 +74,13 @@ export default class GenericDice extends Component {
       >
         <div
           className={diceClass}
-          style={animationStyle}
-          ref="dice"
           key="dice"
         >
-          <DiceFace face={this.state.face} key="diceFace" />
+          <div className="dice-face" key="diceFace">
+            {faces}
+          </div>
         </div>
-        <DiceShadow
-          style={animationStyle}
-          animation={this.state.animation} key="diceShadow"
-        />
+        <div className={diceShadowClass} key="diceShadow" />
       </div>
     );
   }

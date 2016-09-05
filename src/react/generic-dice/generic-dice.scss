@@ -1,5 +1,14 @@
+// Main dice container.
 @import './animate-dice';
 @import './dice-wrapper';
+
+// Dice face.
+@import './dice-face';
+@import './dice-dot';
+
+// Dice shadow.
+@import './animate-dice-shadow';
+@import './dice-shadow';
 
 .dice {
   position: relative;

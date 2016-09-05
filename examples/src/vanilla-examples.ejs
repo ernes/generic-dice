@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+  head
+    title=htmlWebpackPlugin.options.title
+  body
+    h1=htmlWebpackPlugin.options.title
+    ul
+      li
+        a(href="index.html") Home
+      li
+        a(href="react-examples.html") React examples
+      li.current
+        span Vanilla (plain Javascript) examples
+
+    #vanilla-game
+
+    script(src=htmlWebpackPlugin.options.bundle)

@@ -24,22 +24,16 @@ npm install
 
 Note: to check how up to date the dependencies are, run `npm-check` if it's already installed globally via `npm install npm-check -g`.
 
-### Build once the project and the examples
+### Build once the generic-dice module and the examples
 
 ```
-npm run build-all
+npm run build
 ```
 
-### Build the main module continuously while developing
+### Build the main module and the examples continuously while developing
 
 ```
 npm run dev
-```
-
-### Build the examples continuously while developing
-
-```
-npm run dev-examples
 ```
 
 ### Lint the project once
@@ -66,9 +60,31 @@ npm login
 
 ### Publish to npm
 
+- Locally merge the latest code to publish into the master branch.
+- Check the package.json version is correct.
+- Edit `config.json` so that NODE_ENV is set to production, not development.
+- Run `npm run build-all` to update all dist packages (main module and examples).
+- Update the `CHANGELOG.md` file.
+- Make sure a `git tag` has been created for the version to publish.
+- Publish the code to master `git push origin master`
+- Publish the tag `git push --tags`
+
 ```
 npm publish
 ```
+
+### npm packages hygiene
+
+Regularly check the dependencies are healthy ones, at least before a new release is made.
+
+If it's not already installed on your machine:
+
+```
+npm install -g npm-check
+```
+
+To use, run `npm-check`
+
 
 ## Visual Studio Code setup [optional]
 

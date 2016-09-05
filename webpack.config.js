@@ -1,11 +1,12 @@
 const webpack = require('webpack');
+const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 
 const config = require('./config.json');
 
 let filename;
 let uglifyConfig;
 if (config.NODE_ENV === '\"production\"') {
-  filename = 'generic-dice.min.js';
+  filename = '[name].min.js';
   uglifyConfig = {
     compress: {
       warnings: false,
@@ -15,19 +16,20 @@ if (config.NODE_ENV === '\"production\"') {
     sourceMap: true,
   };
 } else {
-  filename = 'generic-dice.js';
+  filename = '[name].js';
   uglifyConfig = {
     compress: false,
     mangle: false,
     beautify: true,
-    sourceMap: false,
+    sourceMap: true,
   };
 }
 
 module.exports = {
   context: `${__dirname}`,
   entry: {
-    bundle: './index',
+    'generic-dice': './reactSource',
+    'generic-dice-vanilla': './vanillaSource',
   },
   devtool: 'source-map',
   output: {
@@ -61,6 +63,8 @@ module.exports = {
     ],
   },
   plugins: [
+    new WebpackCleanupPlugin(),
+
     new webpack.optimize.UglifyJsPlugin(uglifyConfig),
 
     // Development: set NODE_ENV to "\"development\"" in config.json
