@@ -113,6 +113,6 @@ GenericDice.propTypes = {
 
 GenericDice.defaultProps = {
   face: 1,
-  rolling: false,
+  rolling: true,
   size: 16,
 };
