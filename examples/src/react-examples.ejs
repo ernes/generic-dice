@@ -16,4 +16,8 @@ html(lang="en")
 
     p=htmlWebpackPlugin.options.nadjib
 
+    p Trigger a roll with this code in the console:
+    pre const rollingEvent = new CustomEvent('roll');
+    pre window.document.dispatchEvent(rollingEvent);
+
     script(src=htmlWebpackPlugin.options.bundle)
