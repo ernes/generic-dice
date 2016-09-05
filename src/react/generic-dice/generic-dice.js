@@ -3,6 +3,15 @@ import React, { Component } from 'react';
 import './generic-dice.scss';
 
 export default class GenericDice extends Component {
+  constructor() {
+    super();
+
+    // Trigger a roll with:
+    // const rollingEvent = new CustomEvent('roll');
+    // window.document.dispatchEvent(rollingEvent);
+    this.handleRoll = this.handleRoll.bind(this);
+  }
+
   componentWillMount() {
     this.setState({
       face: this.props.face,
@@ -15,6 +24,16 @@ export default class GenericDice extends Component {
     if (this.state.rolling) {
       this.roll();
     }
+
+    window.document.addEventListener('roll', this.handleRoll);
+  }
+
+  componentWillUnmount() {
+    window.document.removeEventListener('roll', this.handleRoll);
+  }
+
+  handleRoll() {
+    this.roll();
   }
 
   // @animation: string CSS class parameter that can be 'thrown' or ''.
@@ -94,6 +113,6 @@ GenericDice.propTypes = {
 
 GenericDice.defaultProps = {
   face: 1,
-  rolling: true,
+  rolling: false,
   size: 16,
 };
