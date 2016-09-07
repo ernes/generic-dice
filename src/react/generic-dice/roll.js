@@ -4,10 +4,12 @@ export function roll() {
     animation: 'thrown',
   });
 
-  setTimeout(() => {
+  const resetAnimation = () => {
     this.setState({
       rolling: false,
       animation: '',
     });
-  }, 700);
+  };
+
+  setTimeout(resetAnimation, 700);
 }

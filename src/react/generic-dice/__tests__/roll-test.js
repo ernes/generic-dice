@@ -1,4 +1,4 @@
-/* global describe jest it expect beforeEach afterEach jasmine */
+/* global describe jest it expect beforeEach afterEach jasmine spyOn */
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 
@@ -31,4 +31,6 @@ describe('GenericDice roll function', () => {
 
     expect(component.state.animation).toBe('thrown');
   });
+
+  it('has called resetAnimation when the timeout has elapsed');
 });
