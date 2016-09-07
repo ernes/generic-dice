@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
 
+import { roll } from './roll';
 import './generic-dice.scss';
 
 export default class GenericDice extends Component {
+  constructor() {
+    super();
+
+    // Trigger a roll with:
+    // const rollingEvent = new CustomEvent('roll');
+    // window.document.dispatchEvent(rollingEvent);
+    this.handleRoll = this.handleRoll.bind(this);
+  }
+
   componentWillMount() {
     this.setState({
       face: this.props.face,
@@ -13,40 +23,18 @@ export default class GenericDice extends Component {
 
   componentDidMount() {
     if (this.state.rolling) {
-      this.roll();
+      roll.call(this);
     }
+
+    window.document.addEventListener('roll', this.handleRoll);
   }
 
-  // @animation: string CSS class parameter that can be 'thrown' or ''.
-  // @duration: length of time in milliseconds during which the animation should last.
-  roll(animation = 'thrown', duration = 2000) {
-    let start;
-    let animationId = null;
+  componentWillUnmount() {
+    window.document.removeEventListener('roll', this.handleRoll);
+  }
 
-    const rolling = timestamp => {
-      if (!start) {
-        start = timestamp;
-        this.setState({
-          rolling: true,
-          animation,
-        });
-      }
-
-      const delta = timestamp - start;
-
-      if (delta > duration) {
-        start = null;
-        window.cancelAnimationFrame(animationId);
-        this.setState({
-          rolling: false,
-          animation: '',
-        });
-      } else {
-        window.requestAnimationFrame(rolling);
-      }
-    };
-
-    animationId = window.requestAnimationFrame(rolling);
+  handleRoll() {
+    roll.call(this);
   }
 
   render() {
