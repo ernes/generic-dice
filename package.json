@@ -29,10 +29,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "statements": 95,
-        "branches": 80,
+        "statements": 85,
+        "branches": 60,
         "functions": 90,
-        "lines": 95
+        "lines": 80
       }
     }
   },
@@ -87,6 +87,7 @@
     "npm": "~3.10.6",
     "pug": "2.0.0-beta6",
     "pug-loader": "2.3.0",
+    "raf.js": "0.0.4",
     "react-addons-test-utils": "~15.3.1",
     "sass-loader": "~4.0.1",
     "style-loader": "~0.13.1",
