@@ -88,7 +88,6 @@
     "npm": "~3.10.6",
     "pug": "2.0.0-beta6",
     "pug-loader": "2.3.0",
-    "raf.js": "0.0.4",
     "react-addons-test-utils": "~15.3.1",
     "sass-loader": "~4.0.1",
     "style-loader": "~0.13.1",
