@@ -1,13 +1,14 @@
-/* global describe jest it expect beforeEach afterEach jasmine */
+/* global describe jest it expect beforeEach afterEach jasmine done */
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
+import JasminePromiseMatchers from 'jasmine-es6-promise-matchers';
 
 import GenericDice from '../generic-dice';
 
 jest.unmock('../generic-dice');
 jest.unmock('../roll');
 
-describe('GenericDice roll function', () => {
+describe('roll event', () => {
   let rollingEvent;
 
   beforeEach(() => {
@@ -33,28 +34,25 @@ describe('GenericDice roll function', () => {
   });
 });
 
-describe('GenericDice roll function setTimeout', () => {
-  let timerCallback;
+describe('animate Promise', () => {
+  beforeEach(JasminePromiseMatchers.install);
 
-  beforeEach(() => {
-    timerCallback = jasmine.createSpy('roll');
-    jasmine.clock().uninstall();
-    jasmine.clock().install();
+  afterEach(JasminePromiseMatchers.uninstall);
+
+  it('is rejected if the duration is null', () => {
+    expect(animate).toBeRejected(null, done);
   });
 
-  afterEach(() => {
-    jasmine.clock().uninstall();
+  it('is rejected if the duration is not a number', () => {
+    expect(animate).toBeRejected('I am not a number', done);
   });
 
-  it('causes a timeout to be called', () => {
-    setTimeout(() => {
-      timerCallback();
-    }, 100);
-
-    expect(timerCallback).not.toHaveBeenCalled();
-
-    jasmine.clock().tick(101);
-
-    expect(timerCallback).toHaveBeenCalled();
+  it('is rejected if the duration is a negative number', () => {
+    expect(animate).toBeRejected(-2, done);
   });
+
+  it('resolves if the duration is a positive number', () => {
+    expect(animate).toBeResolvesWith(700, done);
+  });
+
 });
