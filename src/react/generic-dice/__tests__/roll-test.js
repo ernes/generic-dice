@@ -1,22 +1,60 @@
-/* global describe jest it expect */
+/* global describe jest it expect beforeEach afterEach jasmine */
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
 
-import requestAnimationFrame from 'raf.js';
+import GenericDice from '../generic-dice';
 
-import { roll } from '../roll';
-
+jest.unmock('../generic-dice');
 jest.unmock('../roll');
 
-// Use polyfill from raf.js if requestAnimationFrame is not available.
-if (!window.requestAnimationFrame) {
-  window.requestAnimationFrame = requestAnimationFrame;
-}
+describe('GenericDice roll function', () => {
+  let rollingEvent;
 
-describe('GenericDice', () => {
-  it('co-exists with a window object to represent the DOM', () => {
-    expect(window).toBeDefined();
+  beforeEach(() => {
+    rollingEvent = new CustomEvent('roll');
   });
 
-  it('co-exists with the requestAnimationFrame function from the window DOM object', () => {
-    expect(window.requestAnimationFrame).toBeDefined();
+  afterEach(() => {
+    window.document.removeEventListener('roll', rollingEvent);
+  });
+
+  it('changes the state when it is called via triggering the roll event', () => {
+    const component = TestUtils.renderIntoDocument(<GenericDice rolling={false} />);
+    window.document.dispatchEvent(rollingEvent);
+
+    expect(component.state.rolling).toBe(true);
+  });
+
+  it('changes the state when it is called via triggering the roll event', () => {
+    const component = TestUtils.renderIntoDocument(<GenericDice rolling={false} />);
+    window.document.dispatchEvent(rollingEvent);
+
+    expect(component.state.animation).toBe('thrown');
+  });
+});
+
+describe('GenericDice roll function setTimeout', () => {
+  let timerCallback;
+
+  beforeEach(() => {
+    timerCallback = jasmine.createSpy('roll');
+    jasmine.clock().uninstall();
+    jasmine.clock().install();
+  });
+
+  afterEach(() => {
+    jasmine.clock().uninstall();
+  });
+
+  it('causes a timeout to be called', () => {
+    setTimeout(() => {
+      timerCallback();
+    }, 100);
+
+    expect(timerCallback).not.toHaveBeenCalled();
+
+    jasmine.clock().tick(101);
+
+    expect(timerCallback).toHaveBeenCalled();
   });
 });
