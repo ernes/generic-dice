@@ -80,6 +80,7 @@
     "file-loader": "0.9.0",
     "html-webpack-plugin": "2.22.0",
     "install": "~0.8.1",
+    "jasmine-es6-promise-matchers": "~2.0.1",
     "jest": "14.1.0",
     "jest-cli": "14.1.0",
     "left-pad": "azer/left-pad",
