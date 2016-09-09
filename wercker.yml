@@ -9,6 +9,3 @@ build:
     - script:
         name: build source code
         code: npm run build
-    - script:
-        name: build examples code
-        code: npm run examples
