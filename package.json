@@ -13,7 +13,7 @@
     "generic-dice": "node ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js --progress --colors",
     "examples": "node ./node_modules/webpack/bin/webpack.js --config ./examples/webpack.config.js --progress --colors",
     "dev": "node ./node_modules/webpack/bin/webpack.js -w --config ./webpack.config.js --progress --colors & node ./node_modules/webpack/bin/webpack.js -w --config ./examples/webpack.config.js --progress --colors",
-    "test": "jest ./src/ -u"
+    "test": "jest ./src/ -u && npm run lint"
   },
   "jest": {
     "testPathDirs": [

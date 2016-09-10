@@ -46,5 +46,4 @@ describe('GenericDice roll function', () => {
   });
 
   it('has called resetAnimation when the timeout has elapsed');
-
 });
