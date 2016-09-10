@@ -35,15 +35,14 @@ describe('GenericDice roll function', () => {
   });
 
   it('has found event and checked its timeout length', () => {
-    const component = TestUtils.renderIntoDocument(<GenericDice rolling={false} />);
+    TestUtils.renderIntoDocument(<GenericDice rolling={false} />);
     window.document.dispatchEvent(rollingEvent);
 
-    // Which event number is this?
-    // It changes depending on other unit tests (I know, it's wrong').
-    expect(setTimeout.mock.calls.length).toBe(3);
+    // Which setTimeout mock is this?
+    // It changes depending on other unit tests (which is wrong).
+    const currentMockSetTimeoutIndex = setTimeout.mock.calls.length - 1;
 
-    // The 3rd event is on index 2.
-    expect(setTimeout.mock.calls[2][1]).toBe(700);
+    expect(setTimeout.mock.calls[currentMockSetTimeoutIndex][1]).toBe(700);
   });
 
   it('has called resetAnimation when the timeout has elapsed');
