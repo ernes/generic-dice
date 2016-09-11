@@ -22,15 +22,20 @@ export default class GenericDice extends Component {
   }
 
   componentDidMount() {
-    if (this.state.rolling) {
-      roll.call(this);
-    }
-
     window.document.addEventListener('roll', this.handleRoll);
+
+    if (this.state.rolling) {
+      this.tiggerRollEvent();
+    }
   }
 
   componentWillUnmount() {
     window.document.removeEventListener('roll', this.handleRoll);
+  }
+
+  tiggerRollEvent() {
+    const rollingEvent = new CustomEvent('roll');
+    window.document.dispatchEvent(rollingEvent);
   }
 
   handleRoll() {

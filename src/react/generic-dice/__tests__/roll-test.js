@@ -45,5 +45,20 @@ describe('GenericDice roll function', () => {
     expect(setTimeout.mock.calls[currentMockSetTimeoutIndex][1]).toBe(700);
   });
 
-  it('has called resetAnimation when the timeout has elapsed');
+  it('has called resetAnimation synchronously when the timeout has elapsed');
 });
+
+
+/*
+, () => {
+    setTimeout(function () {
+      timerCallback();
+    }, 100);
+
+    expect(timerCallback).not.toHaveBeenCalled();
+
+    jasmine.clock().tick(101);
+
+    expect(timerCallback).toHaveBeenCalled();
+  }
+*/

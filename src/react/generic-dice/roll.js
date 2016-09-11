@@ -1,18 +1,17 @@
+export let resetAnimation;
+
 export function roll() {
-  this.setState({
-    rolling: true,
-    animation: 'thrown',
-  });
-
-  // console.log('nadjib');
-
-  const resetAnimation = () => {
-    // console.log('woz here');
+  resetAnimation = () => {
     this.setState({
       rolling: false,
       animation: '',
     });
   };
+
+  this.setState({
+    rolling: true,
+    animation: 'thrown',
+  });
 
   setTimeout(resetAnimation, 700);
 }

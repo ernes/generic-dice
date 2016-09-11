@@ -31,7 +31,7 @@
       "global": {
         "statements": 100,
         "branches": 80,
-        "functions": 90,
+        "functions": 100,
         "lines": 100
       }
     }
