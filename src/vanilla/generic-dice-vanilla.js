@@ -1,4 +1,4 @@
-export default class GenericDiceVanilla {/* istanbul ignore next */
+export default class GenericDiceVanilla {
   // Initialize a new dice object with default properties.
   constructor() {
     this.face = 1;
