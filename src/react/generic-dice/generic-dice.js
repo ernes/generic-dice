@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import * as C from './constants';
 import { roll } from './roll';
 import './generic-dice.scss';
 
@@ -36,7 +37,7 @@ export default class GenericDice extends Component {
   triggerRollEvent() {
     const rollingEvent = new CustomEvent('roll', {
       detail: {
-        duration: 700,
+        duration: C.DURATION,
       },
     });
 
