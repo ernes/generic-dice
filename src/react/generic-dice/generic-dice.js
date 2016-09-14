@@ -25,7 +25,7 @@ export default class GenericDice extends Component {
     window.document.addEventListener('roll', this.handleRoll);
 
     if (this.state.rolling) {
-      this.tiggerRollEvent();
+      this.triggerRollEvent();
     }
   }
 
@@ -33,7 +33,7 @@ export default class GenericDice extends Component {
     window.document.removeEventListener('roll', this.handleRoll);
   }
 
-  tiggerRollEvent() {
+  triggerRollEvent() {
     const rollingEvent = new CustomEvent('roll');
     window.document.dispatchEvent(rollingEvent);
   }
