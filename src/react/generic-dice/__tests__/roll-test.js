@@ -2,6 +2,7 @@
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 
+import * as C from '../constants';
 import GenericDice from '../generic-dice';
 
 jest.useFakeTimers();
@@ -41,12 +42,12 @@ describe('GenericDice roll function', () => {
     // It changes depending on other unit tests (which is wrong).
     const currentMockSetTimeoutIndex = setTimeout.mock.calls.length - 1;
 
-    expect(setTimeout.mock.calls[currentMockSetTimeoutIndex][1]).toBe(700);
+    expect(setTimeout.mock.calls[currentMockSetTimeoutIndex][1]).toBe(C.DURATION);
   });
 
   it('has found its roll event and checked the timeout length is custom', () => {
     TestUtils.renderIntoDocument(<GenericDice rolling={false} />);
-    const duration = 800;
+    const duration = C.DURATION + 100;
     rollingEvent = new CustomEvent('roll', {
       detail: {
         duration,
@@ -55,6 +56,15 @@ describe('GenericDice roll function', () => {
     window.document.dispatchEvent(rollingEvent);
     const currentMockSetTimeoutIndex = setTimeout.mock.calls.length - 1;
 
-    expect(setTimeout.mock.calls[currentMockSetTimeoutIndex][1]).toBe(800);
+    expect(setTimeout.mock.calls[currentMockSetTimeoutIndex][1]).toBe(duration);
+  });
+
+  it('triggers a roll event when it is mounted and rolling property is not set (true)', () => {
+    TestUtils.renderIntoDocument(<GenericDice />);
+    rollingEvent = new CustomEvent('roll');
+    window.document.dispatchEvent(rollingEvent);
+    const currentMockSetTimeoutIndex = setTimeout.mock.calls.length - 1;
+
+    expect(setTimeout.mock.calls[currentMockSetTimeoutIndex][1]).toBe(C.DURATION);
   });
 });
