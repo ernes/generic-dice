@@ -12,16 +12,13 @@ jest.unmock('../roll');
 describe('GenericDice roll function', () => {
   let rollingEvent;
 
-  beforeEach(() => {
-    rollingEvent = new CustomEvent('roll');
-  });
-
   afterEach(() => {
     window.document.removeEventListener('roll', rollingEvent);
   });
 
   it('changes the state when it is called via triggering the roll event', () => {
     const component = TestUtils.renderIntoDocument(<GenericDice rolling={false} />);
+    rollingEvent = new CustomEvent('roll');
     window.document.dispatchEvent(rollingEvent);
 
     expect(component.state.rolling).toBe(true);
@@ -29,13 +26,15 @@ describe('GenericDice roll function', () => {
 
   it('changes the state when it is called via triggering the roll event', () => {
     const component = TestUtils.renderIntoDocument(<GenericDice rolling={false} />);
+    rollingEvent = new CustomEvent('roll');
     window.document.dispatchEvent(rollingEvent);
 
     expect(component.state.animation).toBe('thrown');
   });
 
-  it('has found event and checked its timeout length', () => {
+  it('has found its roll event and checked its default timeout length', () => {
     TestUtils.renderIntoDocument(<GenericDice rolling={false} />);
+    rollingEvent = new CustomEvent('roll');
     window.document.dispatchEvent(rollingEvent);
 
     // Which setTimeout mock is this?
@@ -43,5 +42,19 @@ describe('GenericDice roll function', () => {
     const currentMockSetTimeoutIndex = setTimeout.mock.calls.length - 1;
 
     expect(setTimeout.mock.calls[currentMockSetTimeoutIndex][1]).toBe(700);
+  });
+
+  it('has found its roll event and checked the timeout length is custom', () => {
+    TestUtils.renderIntoDocument(<GenericDice rolling={false} />);
+    const duration = 800;
+    rollingEvent = new CustomEvent('roll', {
+      detail: {
+        duration,
+      },
+    });
+    window.document.dispatchEvent(rollingEvent);
+    const currentMockSetTimeoutIndex = setTimeout.mock.calls.length - 1;
+
+    expect(setTimeout.mock.calls[currentMockSetTimeoutIndex][1]).toBe(800);
   });
 });
