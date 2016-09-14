@@ -34,12 +34,17 @@ export default class GenericDice extends Component {
   }
 
   triggerRollEvent() {
-    const rollingEvent = new CustomEvent('roll');
+    const rollingEvent = new CustomEvent('roll', {
+      detail: {
+        duration: 700,
+      },
+    });
+
     window.document.dispatchEvent(rollingEvent);
   }
 
-  handleRoll() {
-    roll.call(this);
+  handleRoll(e) {
+    roll.call(this, e);
   }
 
   render() {
