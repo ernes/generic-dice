@@ -1,0 +1,7 @@
+assets
+coverage
+dist
+examples/dist
+node_modules
+scripts
+src

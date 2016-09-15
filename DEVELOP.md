@@ -120,6 +120,12 @@ If you haven't already installed `now`, do so now:
 npm install -g now
 ```
 
+To deploy the examples, run:
+
+```
+now --docker
+```
+
 
 ## Visual Studio Code setup [optional]
 
