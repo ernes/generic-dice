@@ -86,6 +86,24 @@ npm install -g npm-check
 To use, run `npm-check`
 
 
+## Build examples in local Docker container [optional]
+
+Install Docker from https://docker.com
+
+```
+docker build .
+docker run -t -i kyma/docker-nginx /bin/bash
+```
+
+## Publish examples to a production server with now [optional]
+
+If you haven't already installed `now`, do so now:
+
+```
+npm install -g now
+```
+
+
 ## Visual Studio Code setup [optional]
 
 In your settings.json (User Settings), the following can be set to lint this project inline:
