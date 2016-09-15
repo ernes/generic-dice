@@ -1,7 +1,6 @@
 assets
 coverage
-dist
-examples/dist
+examples/src
 node_modules
 scripts
 src
