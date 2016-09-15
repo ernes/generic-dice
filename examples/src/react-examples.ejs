@@ -16,8 +16,14 @@ html(lang="en")
 
     p=htmlWebpackPlugin.options.nadjib
 
-    p Trigger a roll with this code in the console:
+    h2 Trigger a roll
+
+    h3 Default maximum duration:
     pre const rollingEvent = new CustomEvent('roll');
+    pre window.document.dispatchEvent(rollingEvent);
+
+    h3 Custom maximum duration:
+    pre const rollingEvent = new CustomEvent('roll', { detail: { duration: 900 } });
     pre window.document.dispatchEvent(rollingEvent);
 
     script(src=htmlWebpackPlugin.options.bundle)

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import * as C from './constants';
+import { getDurationClass } from './get-duration-class';
 import { roll } from './roll';
 import './generic-dice.scss';
 
@@ -49,8 +50,13 @@ export default class GenericDice extends Component {
   }
 
   render() {
+    // Get animation duration class.
+    const durationClass = getDurationClass(this.props.duration);
+
     // Main dice container.
-    const diceClass = `dice ${this.state.animation || ''}`;
+    const diceClass = `dice 
+      ${this.state.animation || ''}
+      ${durationClass}`;
 
     // Dice face.
     const face = this.state.face;
@@ -64,7 +70,9 @@ export default class GenericDice extends Component {
     }
 
     // Dice shadow.
-    const diceShadowClass = `dice-shadow ${this.state.animation || ''}`;
+    const diceShadowClass = `dice-shadow 
+      ${this.state.animation || ''}
+      ${durationClass}`;
 
     return (
       <div
@@ -89,10 +97,12 @@ GenericDice.propTypes = {
   face: React.PropTypes.number,
   rolling: React.PropTypes.bool,
   size: React.PropTypes.number,
+  duration: React.PropTypes.number,
 };
 
 GenericDice.defaultProps = {
   face: 1,
   rolling: true,
   size: 16,
+  duration: C.DURATION,
 };
