@@ -91,9 +91,26 @@ To use, run `npm-check`
 Install Docker from https://docker.com
 
 ```
-docker build .
-docker run -t -i kyma/docker-nginx /bin/bash
+docker build -t examples .
+docker run -p 80:80 -d examples
 ```
+
+To get command line access to the docker container:
+
+```
+docker run -t -i examples /bin/bash
+```
+
+To see files deployed to the docker container, run once inside the container:
+
+```
+ls -l /var/www/
+```
+
+The files can be also run in a browser by going to:
+
+http://localhost/
+
 
 ## Publish examples to a production server with now [optional]
 
