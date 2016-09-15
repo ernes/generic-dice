@@ -1,4 +1,5 @@
 /* global describe jest it expect */
+import * as C from '../constants';
 import { getDurationClass } from '../get-duration-class';
 
 jest.unmock('../get-duration-class');
@@ -24,6 +25,12 @@ describe('getDurationClass function', () => {
     const result = getDurationClass(600);
 
     expect(result).toBe('duration-6');
+  });
+
+  it('returns duration-7 when called with the default duration from constants as parameter', () => {
+    const result = getDurationClass(C.DURATION);
+
+    expect(result).toBe('duration-7');
   });
 
   it('returns duration-8 when called with 800 as parameter', () => {
