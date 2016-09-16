@@ -90,6 +90,8 @@ To use, run `npm-check`
 
 Install Docker from https://docker.com
 
+Don't forget the "." at the end of the first command to build the container:
+
 ```
 docker build -t examples .
 docker run -p 80:80 -d examples
