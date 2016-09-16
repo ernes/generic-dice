@@ -90,10 +90,8 @@ To use, run `npm-check`
 
 Install Docker from https://docker.com
 
-Don't forget the "." at the end of the first command to build the container:
-
 ```
-docker build -t examples .
+docker build -t examples ./examples
 docker run -p 80:80 -d examples
 ```
 
@@ -123,6 +121,26 @@ then you can kill it with:
 
 ```
 docker kill [container id]
+```
+
+To see all docker images:
+
+```
+docker images
+```
+
+The first time an image is built, it may take a while. If an image is no longer needed, it can be deleted:
+
+```
+docker rmi [image id]
+```
+
+Note: if you intend to re-use an image, it's fine to let it be because next time a container starts from that image, it will be much faster.
+
+Force delete an image:
+
+```
+docker rmi -f [image id]
 ```
 
 
