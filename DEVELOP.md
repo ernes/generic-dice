@@ -111,6 +111,18 @@ The files can be also run in a browser by going to:
 
 http://localhost/
 
+To kill a running Docker container, find its container ID:
+
+```
+docker ps
+```
+
+then you can kill it with:
+
+```
+docker kill [container id]
+```
+
 
 ## Publish examples to a production server with now [optional]
 
