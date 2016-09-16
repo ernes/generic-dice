@@ -2,6 +2,9 @@
 @import './scss/animate-dice';
 @import './scss/dice-wrapper';
 
+// Animation duration (face and shadow).
+@import './scss/duration';
+
 // Dice face.
 @import './scss/dice-face';
 @import './scss/dice-dot';
@@ -29,20 +32,4 @@
   &.thrown {
     animation-name: thrown;
   }
-}
-
-.duration-5 {
-  animation-duration: .5s;
-}
-.duration-6 {
-  animation-duration: .6s;
-}
-.duration-7 {
-  animation-duration: .7s;
-}
-.duration-8 {
-  animation-duration: .8s;
-}
-.duration-9 {
-  animation-duration: .9s;
 }

@@ -1,0 +1,13 @@
+$seconds: (
+  5: .5s,
+  6: .6s,
+  7: .7s,
+  8: .8s,
+  9: .9s,
+);
+
+@for $duration from 5 through 9 {
+  .duration-#{$duration} {
+    animation-duration: map-get($seconds, $duration);
+  }
+}
