@@ -33,7 +33,7 @@ npm run build
 ### Build the main module and the examples continuously while developing
 
 ```
-npm run dev
+npm run watch
 ```
 
 ### Lint the project once
