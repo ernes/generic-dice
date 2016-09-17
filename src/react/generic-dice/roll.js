@@ -15,7 +15,7 @@ export function roll(e) {
 
   this.setState({
     rolling: true,
-    animation: 'thrown',
+    animation: C.ANIMATED,
     duration,
   });
 

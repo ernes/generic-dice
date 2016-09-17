@@ -14,12 +14,12 @@ describe('GenericDice roll function', () => {
   let rollingEvent;
 
   afterEach(() => {
-    window.document.removeEventListener('roll', rollingEvent);
+    window.document.removeEventListener(C.ROLL_EVENT, rollingEvent);
   });
 
   it('changes the state when it is called via triggering the roll event', () => {
     const component = TestUtils.renderIntoDocument(<GenericDice rolling={false} />);
-    rollingEvent = new CustomEvent('roll');
+    rollingEvent = new CustomEvent(C.ROLL_EVENT);
     window.document.dispatchEvent(rollingEvent);
 
     expect(component.state.rolling).toBe(true);
@@ -27,15 +27,15 @@ describe('GenericDice roll function', () => {
 
   it('changes the state when it is called via triggering the roll event', () => {
     const component = TestUtils.renderIntoDocument(<GenericDice rolling={false} />);
-    rollingEvent = new CustomEvent('roll');
+    rollingEvent = new CustomEvent(C.ROLL_EVENT);
     window.document.dispatchEvent(rollingEvent);
 
-    expect(component.state.animation).toBe('thrown');
+    expect(component.state.animation).toBe(C.ANIMATED);
   });
 
   it('has found its roll event and checked its default timeout length', () => {
     TestUtils.renderIntoDocument(<GenericDice rolling={false} />);
-    rollingEvent = new CustomEvent('roll');
+    rollingEvent = new CustomEvent(C.ROLL_EVENT);
     window.document.dispatchEvent(rollingEvent);
 
     // Which setTimeout mock is this?
@@ -48,7 +48,7 @@ describe('GenericDice roll function', () => {
   it('has found its roll event and checked the timeout length is custom', () => {
     TestUtils.renderIntoDocument(<GenericDice rolling={false} />);
     const duration = C.DURATION + 100;
-    rollingEvent = new CustomEvent('roll', {
+    rollingEvent = new CustomEvent(C.ROLL_EVENT, {
       detail: {
         duration,
       },
@@ -61,7 +61,7 @@ describe('GenericDice roll function', () => {
 
   it('triggers a roll event when it is mounted and rolling property is not set (true)', () => {
     TestUtils.renderIntoDocument(<GenericDice />);
-    rollingEvent = new CustomEvent('roll');
+    rollingEvent = new CustomEvent(C.ROLL_EVENT);
     window.document.dispatchEvent(rollingEvent);
     const currentMockSetTimeoutIndex = setTimeout.mock.calls.length - 1;
 
