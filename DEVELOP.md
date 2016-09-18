@@ -177,6 +177,22 @@ You will also need to install the following plugins:
 ext install eslint
 ```
 
+## Monitoring with opbeat.com [optional]
+
+Setup
+
+- Create an account on [Opbeat](https://opbeat.com)
+- Create an account on [Heroku](https://heroku.com)
+- Create an app on Heroku, for example, "generic-dice"
+- Install the [Heroku toolbelt](https://devcenter.heroku.com/articles/heroku-command-line)
+- Login to your Heroku toolbelt with `heroku login`
+
+```
+git remote add heroku git@heroku.com:generic-dice.git
+heroku addons:create deployhooks:http --url=[your own url obtained from opbeat.com] --app generic-dice
+git push heroku master
+```
+
 ## Special case: install this npm module from local source code instead of npmjs repos [optional]
 
 If you checked out the source code to a directory in ../generic-dice/, then you would run from the directory where you want to install this npm module:
