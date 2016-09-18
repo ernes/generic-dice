@@ -11,6 +11,10 @@ jest.unmock('../generic-dice');
 describe('GenericDice', () => {
   let component;
 
+  beforeEach(() => {
+    component = TestUtils.renderIntoDocument(<GenericDice />);
+  });
+
   afterEach(() => {
     const node = ReactDOM.findDOMNode(component);
 
@@ -24,15 +28,12 @@ describe('GenericDice', () => {
   });
 
   it('can be rendered and found in the ReactDOM', () => {
-    component = TestUtils.renderIntoDocument(<GenericDice />);
     const result = ReactDOM.findDOMNode(component);
 
     expect(result).toBeDefined();
   });
 
   it('is set not to have any animation by default when it is mounted', () => {
-    component = TestUtils.renderIntoDocument(<GenericDice />);
-
     expect(component.state.animation).toBe('');
   });
 });
