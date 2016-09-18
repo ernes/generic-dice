@@ -30,9 +30,9 @@ describe('GenericDice', () => {
     expect(result).toBeDefined();
   });
 
-  it('can be set not to roll the first time it is loaded', () => {
-    component = TestUtils.renderIntoDocument(<GenericDice rolling={false} />);
+  it('is set not to have any animation by default when it is mounted', () => {
+    component = TestUtils.renderIntoDocument(<GenericDice />);
 
-    expect(component.state.rolling).toBe(false);
+    expect(component.state.animation).toBe('');
   });
 });

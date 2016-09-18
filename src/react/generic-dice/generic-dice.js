@@ -10,7 +10,7 @@ export default class GenericDice extends Component {
     super();
 
     // Trigger a roll with:
-    // const rollingEvent = new CustomEvent('roll');
+    // const rollingEvent = new CustomEvent(C.ROLL_EVENT);
     // window.document.dispatchEvent(rollingEvent);
     this.handleRoll = this.handleRoll.bind(this);
   }
@@ -18,31 +18,16 @@ export default class GenericDice extends Component {
   componentWillMount() {
     this.setState({
       face: this.props.face,
-      rolling: this.props.rolling,
       animation: '',
     });
   }
 
   componentDidMount() {
-    window.document.addEventListener('roll', this.handleRoll);
-
-    if (this.state.rolling) {
-      this.triggerRollEvent();
-    }
+    window.document.addEventListener(C.ROLL_EVENT, this.handleRoll);
   }
 
   componentWillUnmount() {
-    window.document.removeEventListener('roll', this.handleRoll);
-  }
-
-  triggerRollEvent() {
-    const rollingEvent = new CustomEvent('roll', {
-      detail: {
-        duration: C.DURATION,
-      },
-    });
-
-    window.document.dispatchEvent(rollingEvent);
+    window.document.removeEventListener(C.ROLL_EVENT, this.handleRoll);
   }
 
   handleRoll(e) {
@@ -95,14 +80,12 @@ export default class GenericDice extends Component {
 
 GenericDice.propTypes = {
   face: React.PropTypes.number,
-  rolling: React.PropTypes.bool,
   size: React.PropTypes.number,
   duration: React.PropTypes.number,
 };
 
 GenericDice.defaultProps = {
   face: 1,
-  rolling: true,
   size: 16,
   duration: C.DURATION,
 };
