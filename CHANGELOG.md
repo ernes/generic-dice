@@ -2,14 +2,14 @@
 A tag is created for each release from the master branch.
 
 ### Current version being developped
+- 1.2.1: Docker integration (issue 19)
 
+### Release history
 - 1.2.0:
    - Review dependencies with npm-check (issue 12)
    - Programmatically trigger a new roll from Javascript (issue 10)
    - After .roll() is called there is a delay before the component is updated back to its non rolling state (issue 16)
    - Make it possible to change the duration of the rolling (issue 23)
-
-### Release history
 - 1.1.5:
    - Support bulding plain Javascript (issue 21)
    - Refactor dice-face and dice-shadow into the main generic-dice component (issue 29)

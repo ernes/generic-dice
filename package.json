@@ -1,6 +1,6 @@
 {
   "name": "generic-dice",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "devEngines": {
     "node": "6.x",
     "npm": "3.x"

@@ -4,25 +4,72 @@ The instructions below are meant for contributors who want to develop this compo
 
 For simple installation and usage instruction, see the main README.md of this repository.
 
-## Install dependencies to develop source code
+## Docker
 
-Tools required on your machine, if you haven't already installed them:
+The whole development is made from Docker.
+
+The Docker image is based on Node and will contain the following dependencies: webpack@1.12.14 eslint@2.6.0 eslint-config-airbnb@6.2.0 eslint-plugin-react@4.2.3 babel-eslint@6.0.2 npm-check now
+
+You don't need to install Node or these dependencies, they are included in the Docker image.
+
+Within the Docker container, once it's built from the Docker image, you can run npm commands.
+
+Install Docker, see instructions on wiki: http://wiki.ebabel.eu/index.php/Docker#Install_Docker_on_Ubuntu_16.04
+
+Note: don't forget the "." after `sudo docker build`
 
 ```
-npm install -g webpack@1.12.14 eslint@2.6.0 eslint-config-airbnb@6.2.0 eslint-plugin-react@4.2.3 babel-eslint@6.0.2
+sudo docker build .
+sudo docker run -p 80:80 -d
 ```
 
-Note: this will be better handled once the development of the source code is encapsulated in a Docker image or in Vagrant.
-
-## Install project dependencies
-
-The main generic dice component and the examples will be built automatically after the dependencies are installed.
+To get command line access to the docker container:
 
 ```
-npm install
+sudo docker run -t -i generic-dice-examples /bin/bash
 ```
 
-Note: to check how up to date the dependencies are, run `npm-check` if it's already installed globally via `npm install npm-check -g`.
+To see files deployed to the docker container, run once inside the container:
+
+```
+ls -l /var/www/
+```
+
+The files can be also run in a browser by going to:
+
+http://localhost/
+
+To kill a running Docker container, find its container ID:
+
+```
+sudo docker ps
+```
+
+then you can kill it with:
+
+```
+sudo docker kill [container id]
+```
+
+To see all docker images:
+
+```
+sudo docker images
+```
+
+The first time an image is built, it may take a while. If an image is no longer needed, it can be deleted:
+
+```
+sudo docker rmi [image id]
+```
+
+Note: if you intend to re-use an image, it's fine to let it be because next time a container starts from that image, it will be much faster.
+
+Force delete an image:
+
+```
+sudo docker rmi -f [image id]
+```
 
 ### Build once the generic-dice module and the examples
 
@@ -58,7 +105,9 @@ See the examples to view sample usage of this React.js component.
 npm login
 ```
 
-### Publish to npm
+### Publish to npm [optional]
+
+There is already an official npm package, so you shouldn't need to publish it, but if you need to, this is how it's done:
 
 - Locally merge the latest code to publish into the master branch.
 - Check the package.json version is correct.
@@ -73,91 +122,21 @@ npm login
 npm publish
 ```
 
-### npm packages hygiene
+### npm packages hygiene [optional]
 
 Regularly check the dependencies are healthy ones, at least before a new release is made.
 
-If it's not already installed on your machine:
-
 ```
-npm install -g npm-check
+npm-check
 ```
-
-To use, run `npm-check`
-
-
-## Build examples in local Docker container [optional]
-
-Install Docker from https://docker.com
-
-```
-docker build -t examples ./examples
-docker run -p 80:80 -d examples
-```
-
-To get command line access to the docker container:
-
-```
-docker run -t -i examples /bin/bash
-```
-
-To see files deployed to the docker container, run once inside the container:
-
-```
-ls -l /var/www/
-```
-
-The files can be also run in a browser by going to:
-
-http://localhost/
-
-To kill a running Docker container, find its container ID:
-
-```
-docker ps
-```
-
-then you can kill it with:
-
-```
-docker kill [container id]
-```
-
-To see all docker images:
-
-```
-docker images
-```
-
-The first time an image is built, it may take a while. If an image is no longer needed, it can be deleted:
-
-```
-docker rmi [image id]
-```
-
-Note: if you intend to re-use an image, it's fine to let it be because next time a container starts from that image, it will be much faster.
-
-Force delete an image:
-
-```
-docker rmi -f [image id]
-```
-
 
 ## Publish examples to a production server with now [optional]
-
-If you haven't already installed `now`, do so now:
-
-```
-npm install -g now
-```
 
 To deploy the examples, run:
 
 ```
 now --docker
 ```
-
 
 ## Visual Studio Code setup [optional]
 
