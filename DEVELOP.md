@@ -19,25 +19,15 @@ Install Docker, see instructions on wiki: http://wiki.ebabel.eu/index.php/Docker
 Note: don't forget the "." after `sudo docker build`
 
 ```
+cd ./docker/
 sudo docker build .
-sudo docker run -p 80:80 -d
 ```
 
 To get command line access to the docker container:
 
 ```
-sudo docker run -t -i generic-dice-examples /bin/bash
+sudo docker run -t -i node:6.2.2 /bin/bash
 ```
-
-To see files deployed to the docker container, run once inside the container:
-
-```
-ls -l /var/www/
-```
-
-The files can be also run in a browser by going to:
-
-http://localhost/
 
 To kill a running Docker container, find its container ID:
 
